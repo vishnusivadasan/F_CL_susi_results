@@ -1,0 +1,71 @@
+#!/usr/bin/python
+import traceback
+from susipop import reader as susi
+from susipop import filter as filt
+import numpy as np
+import os
+import sys
+
+dir_opt = str(sys.argv[1])
+
+try:
+    analysis_opt = str(sys.argv[2])
+except:
+    analysis_opt = None
+
+def get_folder_list():
+   list = next(os.walk('.'))[1]
+   return list
+
+#dirs = ['./phi0.1_yd10.0','./phi0.2_yd10.0','./phi0.3_yd10.0','./phi0.4_yd10.0','./phi0.5_yd10.0']
+if dir_opt == 'all':
+    dirs = get_folder_list()
+else:
+    dirs = [dir_opt]
+
+if analysis_opt == None :
+    ialist = ['tot','hd','lub','rep','fric']
+else:
+    ialist = [str(sys.argv[2:])]
+
+for dir in dirs:
+    try:
+        print dir
+        print '----------------------------'
+        exp = susi.DataSet(dir,fluid=False,particles=True)
+        print 'exp        ',dir
+        # print 'tlist      ',exp.tlist
+        print 'volume     ',exp.volume
+        print 'dx         ',exp.dx
+        print 'dt         ',exp.dt
+        tmax = exp.tlist[len(exp.tlist)-1]
+        exp.LoadState(exp.tlist[0])
+        # open files
+        sfiles = dict()
+        for ia in ialist:
+            sfiles[ia] = open(exp.resultdir+'/part_stress_norm_'+ia+'_t.dat','w')
+        print 'progress'
+        for t in exp.tlist[1:]:
+            try:
+                for ia in ialist:
+                    s11 = filt.MeanParticlesStress(exp,'norm',ia,0,t,cache=False)
+                    s22 = filt.MeanParticlesStress(exp,'norm',ia,1,t,cache=False)
+                    s33 = filt.MeanParticlesStress(exp,'norm',ia,2,t,cache=False)
+                    sfiles[ia].write(str(t)+','+str(t*exp.dt)+','+str(s11.mean)+','+str(s22.mean)+','+str(s33.mean)+',' \
+                                    +str(s11.sigma) +","+str(s22.sigma) +","+str(s33.sigma) +'\n')
+            except:
+                continue
+            progress = "{:.3F}".format(float(t)/float(tmax))
+            print progress 
+        for ia in ialist:
+            sfiles[ia].close()
+    except:
+        traceback.print_exc()
+        continue
+	
+#os.system(""" gnuplot -e 'plot for [file in system("find . -type f -iname nu_t.dat")] file  u 2:5 w lp t file; pause -1' """)
+
+
+
+
+

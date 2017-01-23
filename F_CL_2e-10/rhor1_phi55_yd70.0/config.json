@@ -1,0 +1,118 @@
+{
+    "experiment": {
+        "magnetic": {
+            "type": "none"
+        },
+        "measurement": {
+            "constant": {
+                "tmeas": 0.00014285714285714284,
+                "tmeasLU": 850
+            },
+            "type": "constant"
+        },
+        "shearrate": {
+            "constant": {
+                "yd": 70.0
+            },
+            "type": "constant"
+        },
+        "temperature": 300.0,
+        "tmax": 0.14285714285714285,
+        "tmaxLU": 171772,
+        "type": "suspshear"
+    },
+    "material": {
+        "fluids": {
+            "0": {
+                "id": 1,
+                "phi": 0.44999999999999996
+            }
+        },
+        "nfluids": 1,
+        "nparticles": 1,
+        "particles": {
+            "0": {
+                "id": 1,
+                "phi": 0.55
+            }
+        }
+    },
+    "output": {
+        "ball": {
+            "Fsub": "T",
+            "Ftot": "T",
+            "Snorm": "T",
+            "Snormsub": "T",
+            "Sshear": "T",
+            "Sshearsub": "F",
+            "id": "T",
+            "radius": "T",
+            "vel": "F"
+        },
+        "fluid": {
+            "Fhd": "F",
+            "Sshear": "T",
+            "eps": "T",
+            "newtonvel": "T",
+            "rho": "T",
+            "vel": "T"
+        },
+        "part": {
+            "Fsub": "T",
+            "Ftot": "T",
+            "Snorm": "T",
+            "Snormsub": "T",
+            "Sshear": "T",
+            "Sshearsub": "T",
+            "ckmax": "T",
+            "displ": "T",
+            "id": "T",
+            "newtonvel": "T",
+            "radius": "T",
+            "vel": "T"
+        },
+        "partmap": "F",
+        "tcheckpoint": 0,
+        "tsubout": 10000000,
+        "ttermout": 100
+    },
+    "pplan": {
+        "nnodes": 1,
+        "omppmpi": 4,
+        "ppnode": 4,
+        "wctime": "10:00:00"
+    },
+    "sample": {
+        "dm": 9.999999999999999e-16,
+        "dt": 1.6633399866932798e-07,
+        "dx": 1e-06,
+        "glx": 6.4e-05,
+        "glxLU": 64,
+        "gly": 4.8e-05,
+        "glyLU": 48,
+        "glz": 6.4e-05,
+        "glzLU": 64
+    },
+    "sim": {
+        "debug": "no",
+        "env": 1,
+        "fhdinttype": "OCL",
+        "lubrication": {
+            "dmaxLU": 1.0,
+            "dminLU": 0.001
+        },
+        "partmaptype": "LP",
+        "tau": 1.0
+    },
+    "state": {
+        "partinit": {
+            "lattice": {
+                "dmin": 0.05,
+                "random": 1.0
+            },
+            "type": "lattice"
+        },
+        "type": "generated"
+    },
+    "version": 2
+}

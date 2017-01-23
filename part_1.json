@@ -1,0 +1,64 @@
+{
+    "charge": {
+        "type": "none"
+    },
+    "coating": {
+        "type": "none"
+    },
+    "deform": {
+        "type": "rigid"
+    },
+    "density": {
+        "constant": {
+            "rho": 1000.0
+        },
+        "type": "constant"
+    },
+
+    "friction": {
+        "type": "standard",
+        "standard": {
+            "FCL": 1e-10,                     
+            "mus": 1.0,                      
+            "muk": 1.0                      
+        }
+    },
+
+    "magnetic": {
+        "type": "none"
+    },
+    "repulsion": {
+        "type": "simple",
+        "simple": {
+            "c0": 1e-4,
+            "dmax": 0.1e-6
+        }
+    },
+    "shape": {
+        "type": "monoball"
+    },
+    "size": {
+        "type": "normal",
+        "normal": {
+            "n": 2,
+            "min": 6.0e-6,
+            "max": 14.0e-6,
+            "peak": {
+                "0": {
+                    "mu": 8e-6,
+                    "sigma": 1e-7,
+                    "c": 1.0
+                },
+                "1": {
+                    "mu": 11.2e-6,
+                    "sigma": 1e-7,
+                    "c": 1.0
+                }
+
+            }
+        }
+    },
+    "vdWaals": {
+        "type": "none"
+    }
+}

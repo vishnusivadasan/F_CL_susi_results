@@ -1,0 +1,100 @@
+#!/usr/bin/python
+import json
+import os
+import math
+
+
+def LoadJSON(filename):
+    file = open(filename)
+    string = file.read()
+    file.close()
+    return json.loads(string)
+
+
+def DumpJSON(filename, data):
+    outfile = open(filename, 'w')
+    outfile.write(json.dumps(data, sort_keys=True, indent=4, separators=(',', ': ')))
+    outfile.close()
+
+# ==============================================================================
+
+philist = [56]
+ydlist = [12.0, 14.0, 16.0, 18.0]
+rhor_list = [1]
+FCL_vals = [2e-10]
+strain = 10.0
+
+for rhor in rhor_list:
+    for phi in philist:
+        for yd in ydlist:
+            for FCL in FCL_vals:
+                dirname = "F_CL_"+str(FCL)
+                if not os.path.exists(dirname):os.mkdir(dirname)
+                # dirname and dir creation
+                dir = dirname + '/rhor'+str(rhor)+'_phi' + str(phi) + '_yd' + str(yd)
+                #dir = os.path.join(dirname,dir)
+                print dirname + dir
+                if not os.path.exists(dir): os.system('mkdir -p '+ dir)
+                datadir = os.path.join(dir, 'data')
+                if not os.path.exists(datadir): os.mkdir(datadir)
+                # -------------------------------------------------------------
+                # load reference configs as template
+                config = LoadJSON('./config.json')
+                fluid = LoadJSON('./fluid_1.json')
+                part = LoadJSON('./part_1.json')
+                # -------------------------------------------------------------
+                # compute dt
+                dx = config['sample']["dx"]
+                tau = config['sim']['tau']
+                nuLU = (tau - 0.5) / 3.0
+                nu = fluid['viscshear']['constant']['nu']
+                # dt = dx**2/(3.0*nu*(tau-0.5))
+                dt = nuLU / nu * dx**2
+                config['sample']["dt"] = dt
+                # -------------------------------------------------------------
+                # set phi
+                config['material']['particles']['0']['phi'] = phi / 100.0
+                config['material']['fluids']['0']['phi'] = 1.0 - phi / 100.0
+                # -------------------------------------------------------------
+                # set shear rate
+                config['experiment']['shearrate']['type'] = 'constant'
+                config['experiment']['shearrate']['constant']['yd'] = yd
+                #set particle density
+                part['density']['constant']['rho'] = rhor*fluid['density']['constant']['rho']
+                print "part rho:",part['density']['constant']['rho'] 
+                # -------------------------------------------------------------
+                # compute experiment time settings
+                tmax = strain / yd
+                tmaxLU = int(tmax / dt) + 1
+                print 'tmax ', tmax, tmaxLU
+                tmeas = 1.0 / yd / 100.0
+                tmeasLU = int(tmeas / dt + 0.5)
+                print 'tmeas ', tmeas, tmeasLU
+                config['experiment']['tmax'] = tmax
+                config['experiment']['tmaxLU'] = tmaxLU
+                config['experiment']['measurement']['type'] = 'constant'
+                config['experiment']['measurement']['constant']['tmeas'] = tmeas
+                config['experiment']['measurement']['constant']['tmeasLU'] = tmeasLU
+                # -------------------------------------------------------------
+                #F_CL being changed
+                part['friction']['standard']['FCL'] = FCL
+                # --------------------------------------------------------------
+                # dump completed jsons
+                DumpJSON(os.path.join(dir, 'config.json'), config)
+                DumpJSON(os.path.join(dir, 'fluid_1.json'), fluid)
+                DumpJSON(os.path.join(dir, 'part_1.json'), part)
+                # -------------------------------------------------------------
+    #            slurm = open(os.path.join(dir, 'STS_phi' + str(phi) + '_yd' + str(yd)), 'w')
+    #            slurm.write('#!/bin/bash\n')
+    #            slurm.write('#SBATCH -N 1\n')
+    #            slurm.write('#SBATCH -p gpu\n')
+    #            slurm.write('#SBATCH -n 4 -c 4\n')
+    #            slurm.write('#SBATCH -t 5-00:00:00\n')
+    #            slurm.write('module load gcc/4.9.2\n')
+    #            slurm.write('module load cuda\n')
+    #            slurm.write('module load mpi\n')
+    #            slurm.write('export FC=gfortran\n')
+    #            slurm.write('export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lorenze/projects/susi/build/libs/fortrancl-0.1alpha4\n')
+    #            slurm.write('cd ' + os.getcwd() + '/' + dir + '/\n')
+    #            slurm.write('srun --output=out%J.%t susi\n')
+    #            slurm.close()

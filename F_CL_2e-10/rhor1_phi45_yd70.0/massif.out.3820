@@ -1,0 +1,1965 @@
+desc: (none)
+cmd: susi
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=3465056
+mem_heap_B=568
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=3650001
+mem_heap_B=3197
+mem_heap_extra_B=371
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=3741002
+mem_heap_B=3380
+mem_heap_extra_B=364
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=3885705
+mem_heap_B=11345
+mem_heap_extra_B=415
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=4093662
+mem_heap_B=15064
+mem_heap_extra_B=888
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=4292541
+mem_heap_B=175058
+mem_heap_extra_B=2118
+mem_stacks_B=0
+heap_tree=detailed
+n9: 175058 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n0: 5538 in 29 places, all below massif's threshold (01.00%)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 3072 0x7296C81: opal_pointer_array_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3072 in 3 places, all below massif's threshold (01.00%)
+ n2: 2328 0x597D191: _gfortrani_xcalloc (memory.c:84)
+  n1: 2064 0x5A471A5: insert_unit (unit.c:210)
+   n0: 2064 in 3 places, all below massif's threshold (01.00%)
+  n0: 264 in 1 place, below massif's threshold (01.00%)
+ n1: 2048 0x7549073: numa_bitmask_alloc (in /usr/lib64/libnuma.so.1)
+  n0: 2048 in 8 places, all below massif's threshold (01.00%)
+ n1: 2040 0x6868F53: register_printf_modifier (in /usr/lib64/libc-2.17.so)
+  n1: 2040 0x63BF4A9: register_printf_flt128 (quadmath-printf.c:393)
+   n1: 2040 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 2040 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 1984 0x686920D: register_printf_type (in /usr/lib64/libc-2.17.so)
+  n1: 1984 0x63BF48E: register_printf_flt128 (quadmath-printf.c:390)
+   n1: 1984 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 1984 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+#-----------
+snapshot=7
+#-----------
+time=4477882
+mem_heap_B=258673
+mem_heap_extra_B=2479
+mem_stacks_B=0
+heap_tree=detailed
+n7: 258673 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 65544 0x72C6819: opal_util_keyval_yylex (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 65544 0x72BE478: opal_util_keyval_parse (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 65544 0x72B2F7F: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 65544 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 65544 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 65544 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 65544 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 65544 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 65544 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 65544 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 16386 0x72C5602: opal_util_keyval_yy_create_buffer (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 16386 0x72C6E0C: opal_util_keyval_init_buffer (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 16386 0x72BE46A: opal_util_keyval_parse (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 16386 0x72B2F7F: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 16386 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 16386 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 16386 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+        n1: 16386 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+         n1: 16386 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+          n1: 16386 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+           n0: 16386 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n0: 15623 in 36 places, all below massif's threshold (01.00%)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 3072 0x7296C81: opal_pointer_array_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3072 in 3 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=8
+#-----------
+time=4692493
+mem_heap_B=184153
+mem_heap_extra_B=4855
+mem_stacks_B=0
+heap_tree=detailed
+n13: 184153 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n0: 4845 in 34 places, all below massif's threshold (01.00%)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 3312 0x7296C81: opal_pointer_array_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3312 in 4 places, all below massif's threshold (01.00%)
+ n1: 2980 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n0: 2980 in 20 places, all below massif's threshold (01.00%)
+ n1: 2560 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 2560 in 16 places, all below massif's threshold (01.00%)
+ n2: 2328 0x597D191: _gfortrani_xcalloc (memory.c:84)
+  n1: 2064 0x5A471A5: insert_unit (unit.c:210)
+   n0: 2064 in 3 places, all below massif's threshold (01.00%)
+  n0: 264 in 1 place, below massif's threshold (01.00%)
+ n1: 2088 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 2088 in 4 places, all below massif's threshold (01.00%)
+ n1: 2048 0x7549073: numa_bitmask_alloc (in /usr/lib64/libnuma.so.1)
+  n0: 2048 in 8 places, all below massif's threshold (01.00%)
+ n1: 2040 0x6868F53: register_printf_modifier (in /usr/lib64/libc-2.17.so)
+  n1: 2040 0x63BF4A9: register_printf_flt128 (quadmath-printf.c:393)
+   n1: 2040 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 2040 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 1984 0x686920D: register_printf_type (in /usr/lib64/libc-2.17.so)
+  n1: 1984 0x63BF48E: register_printf_flt128 (quadmath-printf.c:390)
+   n1: 1984 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 1984 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 1920 0x729F3D5: opal_dss_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 1920 in 24 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=9
+#-----------
+time=4881094
+mem_heap_B=190425
+mem_heap_extra_B=6807
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=5016037
+mem_heap_B=195235
+mem_heap_extra_B=8429
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=5137627
+mem_heap_B=198426
+mem_heap_extra_B=9502
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=5285946
+mem_heap_B=203636
+mem_heap_extra_B=11220
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=5390499
+mem_heap_B=207602
+mem_heap_extra_B=12294
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=5551647
+mem_heap_B=242890
+mem_heap_extra_B=12982
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=5767216
+mem_heap_B=245479
+mem_heap_extra_B=13649
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=5946613
+mem_heap_B=247148
+mem_heap_extra_B=13980
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=6097475
+mem_heap_B=248389
+mem_heap_extra_B=14275
+mem_stacks_B=0
+heap_tree=detailed
+n10: 248389 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n2: 32816 0x68D1E5F: __alloc_dir (in /usr/lib64/libc-2.17.so)
+  n1: 32816 0x72C8B20: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 32816 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 32816 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 32816 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 32816 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 32816 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 32816 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+         n1: 32816 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+          n1: 32816 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+           n1: 32816 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+            n1: 32816 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+             n1: 32816 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+              n0: 32816 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n0: 0 in 2 places, all below massif's threshold (01.00%)
+ n0: 17629 in 37 places, all below massif's threshold (01.00%)
+ n3: 17043 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 8066 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 8066 in 48 places, all below massif's threshold (01.00%)
+  n2: 6248 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 6018 0x72C8CDB: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 6018 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 6018 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 6018 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 6018 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 6018 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 6018 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+          n1: 6018 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+           n1: 6018 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 6018 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+             n1: 6018 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+              n1: 6018 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+               n0: 6018 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 230 in 2 places, all below massif's threshold (01.00%)
+  n0: 2729 in 24 places, all below massif's threshold (01.00%)
+ n1: 11680 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 11680 in 50 places, all below massif's threshold (01.00%)
+ n2: 4408 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 3016 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 3016 in 8 places, all below massif's threshold (01.00%)
+  n0: 1392 in 3 places, all below massif's threshold (01.00%)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 3453 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3453 in 7 places, all below massif's threshold (01.00%)
+ n1: 3312 0x7296C81: opal_pointer_array_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3312 in 4 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=18
+#-----------
+time=6211660
+mem_heap_B=249302
+mem_heap_extra_B=14498
+mem_stacks_B=0
+heap_tree=detailed
+n10: 249302 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n2: 32816 0x68D1E5F: __alloc_dir (in /usr/lib64/libc-2.17.so)
+  n1: 32816 0x72C8B20: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 32816 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 32816 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 32816 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 32816 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 32816 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 32816 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+         n1: 32816 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+          n1: 32816 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+           n1: 32816 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+            n1: 32816 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+             n1: 32816 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+              n0: 32816 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n0: 0 in 2 places, all below massif's threshold (01.00%)
+ n3: 17875 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 8066 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 8066 in 48 places, all below massif's threshold (01.00%)
+  n2: 7080 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 6850 0x72C8CDB: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 6850 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 6850 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 6850 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 6850 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 6850 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 6850 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+          n1: 6850 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+           n1: 6850 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 6850 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+             n1: 6850 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+              n1: 6850 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+               n0: 6850 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 230 in 2 places, all below massif's threshold (01.00%)
+  n0: 2729 in 24 places, all below massif's threshold (01.00%)
+ n0: 17710 in 37 places, all below massif's threshold (01.00%)
+ n1: 11680 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 11680 in 50 places, all below massif's threshold (01.00%)
+ n2: 4408 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 3016 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 3016 in 8 places, all below massif's threshold (01.00%)
+  n0: 1392 in 3 places, all below massif's threshold (01.00%)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 3453 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3453 in 7 places, all below massif's threshold (01.00%)
+ n1: 3312 0x7296C81: opal_pointer_array_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3312 in 4 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=19
+#-----------
+time=6375295
+mem_heap_B=217484
+mem_heap_extra_B=14716
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=6577079
+mem_heap_B=221109
+mem_heap_extra_B=16187
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=6680489
+mem_heap_B=4418445
+mem_heap_extra_B=20963
+mem_stacks_B=0
+heap_tree=peak
+n3: 4418445 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4194336 0x730A3A3: opal_memory_linux_ptmalloc2_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4194336 0x730A0DE: linux_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4194336 0x72AEE73: mca_base_framework_components_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 4194336 0x7309FC0: opal_memory_base_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4194336 0x72B7F54: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 4194336 0x72985D0: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 4194336 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+        n1: 4194336 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 4194336 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+          n1: 4194336 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+           n1: 4194336 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+            n1: 4194336 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+             n0: 4194336 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n0: 17312 in 1 place, below massif's threshold (01.00%)
+ n0: 74253 in 46 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=22
+#-----------
+time=6831203
+mem_heap_B=228025
+mem_heap_extra_B=18431
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=6898276
+mem_heap_B=229879
+mem_heap_extra_B=19137
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=7108407
+mem_heap_B=229879
+mem_heap_extra_B=19137
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=7297770
+mem_heap_B=241576
+mem_heap_extra_B=19968
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=7387676
+mem_heap_B=260232
+mem_heap_extra_B=20136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=7539738
+mem_heap_B=264074
+mem_heap_extra_B=20374
+mem_stacks_B=0
+heap_tree=detailed
+n11: 264074 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 25008 0x72AE056: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 25008 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 25008 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 25008 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 25008 0x72986AA: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 25008 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+       n1: 25008 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+        n1: 25008 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 25008 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+          n1: 25008 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+           n1: 25008 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+            n0: 25008 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n0: 22912 in 62 places, all below massif's threshold (01.00%)
+ n3: 21459 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 10155 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 10155 in 48 places, all below massif's threshold (01.00%)
+  n2: 7984 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 7806 0x72ACC01: save_filename (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 7806 0x72C8C80: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 7806 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 7806 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 7806 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 7806 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 7806 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+          n1: 7806 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+           n1: 7806 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 7806 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+             n1: 7806 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+              n1: 7806 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+               n1: 7806 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                n0: 7806 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 178 in 3 places, all below massif's threshold (01.00%)
+  n0: 3320 in 25 places, all below massif's threshold (01.00%)
+ n2: 16480 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 11840 in 49 places, all below massif's threshold (01.00%)
+  n1: 4640 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4640 in 11 places, all below massif's threshold (01.00%)
+ n2: 8120 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 5336 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5336 in 8 places, all below massif's threshold (01.00%)
+  n0: 2784 in 3 places, all below massif's threshold (01.00%)
+ n1: 5044 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 5044 in 7 places, all below massif's threshold (01.00%)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 3691 0x400AF8D: _dl_new_object (in /usr/lib64/ld-2.17.so)
+  n1: 3691 0x40060EA: _dl_map_object_from_fd (in /usr/lib64/ld-2.17.so)
+   n1: 3691 0x4008499: _dl_map_object (in /usr/lib64/ld-2.17.so)
+    n1: 3691 0x4013842: dl_open_worker (in /usr/lib64/ld-2.17.so)
+     n1: 3691 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+      n1: 3691 0x40131A9: _dl_open (in /usr/lib64/ld-2.17.so)
+       n1: 3691 0x6BDB029: dlopen_doit (in /usr/lib64/libdl-2.17.so)
+        n1: 3691 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+         n1: 3691 0x6BDB62B: _dlerror_run (in /usr/lib64/libdl-2.17.so)
+          n1: 3691 0x6BDB0BF: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.17.so)
+           n1: 3691 0x72C8E9D: dlopen_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+            n1: 3691 0x72ACE2F: open_component (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+             n1: 3691 0x72AE1F8: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+              n1: 3691 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+               n1: 3691 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                n1: 3691 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                 n1: 3691 0x72986AA: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                  n1: 3691 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                   n1: 3691 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                    n1: 3691 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                     n1: 3691 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+                      n1: 3691 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+                       n1: 3691 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                        n0: 3691 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 3312 0x7296C81: opal_pointer_array_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 3312 in 4 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=28
+#-----------
+time=7683993
+mem_heap_B=243607
+mem_heap_extra_B=21849
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=7836033
+mem_heap_B=242165
+mem_heap_extra_B=22523
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=8001717
+mem_heap_B=256449
+mem_heap_extra_B=23855
+mem_stacks_B=0
+heap_tree=detailed
+n10: 256449 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n0: 26590 in 64 places, all below massif's threshold (01.00%)
+ n3: 23411 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 11694 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 11694 in 57 places, all below massif's threshold (01.00%)
+  n2: 7984 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 7806 0x72ACC01: save_filename (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 7806 0x72C8C80: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 7806 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 7806 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 7806 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 7806 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 7806 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+          n1: 7806 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+           n1: 7806 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 7806 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+             n1: 7806 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+              n1: 7806 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+               n1: 7806 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                n0: 7806 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 178 in 3 places, all below massif's threshold (01.00%)
+  n0: 3733 in 25 places, all below massif's threshold (01.00%)
+ n2: 20640 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 13600 in 58 places, all below massif's threshold (01.00%)
+  n1: 7040 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 7040 in 17 places, all below massif's threshold (01.00%)
+ n2: 9976 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 6728 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 6728 in 10 places, all below massif's threshold (01.00%)
+  n0: 3248 in 3 places, all below massif's threshold (01.00%)
+ n1: 8336 0x72AE056: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 8336 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 8336 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 8336 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 8336 0x72986F5: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 8336 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+       n1: 8336 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+        n1: 8336 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 8336 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+          n1: 8336 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+           n1: 8336 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+            n0: 8336 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+     n0: 0 in 1 place, below massif's threshold (01.00%)
+ n3: 6282 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 2944 0x72B35FE: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 2944 in 59 places, all below massif's threshold (01.00%)
+  n1: 2944 0x72B329A: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 2944 in 59 places, all below massif's threshold (01.00%)
+  n0: 394 in 5 places, all below massif's threshold (01.00%)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n2: 3166 0x7293A53: opal_hash_table_set_value_ptr (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 2815 0x72B3975: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 2815 in 59 places, all below massif's threshold (01.00%)
+  n0: 351 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=31
+#-----------
+time=8213642
+mem_heap_B=253773
+mem_heap_extra_B=25835
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=8419971
+mem_heap_B=260033
+mem_heap_extra_B=27847
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=8633205
+mem_heap_B=265664
+mem_heap_extra_B=29672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=8785909
+mem_heap_B=269796
+mem_heap_extra_B=31108
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=8942411
+mem_heap_B=273789
+mem_heap_extra_B=32579
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=9099571
+mem_heap_B=278766
+mem_heap_extra_B=34570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=9214471
+mem_heap_B=330532
+mem_heap_extra_B=34788
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=9316442
+mem_heap_B=284932
+mem_heap_extra_B=35692
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=9460627
+mem_heap_B=354010
+mem_heap_extra_B=36214
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=9623873
+mem_heap_B=355777
+mem_heap_extra_B=36335
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=9770827
+mem_heap_B=357544
+mem_heap_extra_B=36456
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=9921039
+mem_heap_B=359314
+mem_heap_extra_B=36574
+mem_stacks_B=0
+heap_tree=detailed
+n11: 359314 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 66688 0x72AE056: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66688 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66688 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 66688 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66688 0x702CE8B: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+      n1: 66688 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+       n1: 66688 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+        n1: 66688 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 66688 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+          n1: 66688 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+           n1: 66688 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+            n1: 66688 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+             n0: 66688 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+     n0: 0 in 3 places, all below massif's threshold (01.00%)
+ n2: 35680 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 27680 in 137 places, all below massif's threshold (01.00%)
+  n1: 8000 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 8000 in 17 places, all below massif's threshold (01.00%)
+ n3: 31385 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 17535 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 17535 in 136 places, all below massif's threshold (01.00%)
+  n2: 7984 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 7806 0x72ACC01: save_filename (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 7806 0x72C8C80: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 7806 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 7806 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 7806 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 7806 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 7806 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+          n1: 7806 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+           n1: 7806 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 7806 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+             n1: 7806 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+              n1: 7806 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+               n1: 7806 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                n0: 7806 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 178 in 3 places, all below massif's threshold (01.00%)
+  n0: 5866 in 28 places, all below massif's threshold (01.00%)
+ n0: 31037 in 65 places, all below massif's threshold (01.00%)
+ n2: 12528 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 8352 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 8352 in 11 places, all below massif's threshold (01.00%)
+  n0: 4176 in 3 places, all below massif's threshold (01.00%)
+ n3: 10255 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4888 0x72B35FE: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4888 in 138 places, all below massif's threshold (01.00%)
+  n1: 4888 0x72B329A: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4888 in 138 places, all below massif's threshold (01.00%)
+  n0: 479 in 5 places, all below massif's threshold (01.00%)
+ n1: 8603 0x400AF8D: _dl_new_object (in /usr/lib64/ld-2.17.so)
+  n1: 8603 0x40060EA: _dl_map_object_from_fd (in /usr/lib64/ld-2.17.so)
+   n1: 8603 0x4008499: _dl_map_object (in /usr/lib64/ld-2.17.so)
+    n1: 8603 0x4013842: dl_open_worker (in /usr/lib64/ld-2.17.so)
+     n1: 8603 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+      n1: 8603 0x40131A9: _dl_open (in /usr/lib64/ld-2.17.so)
+       n1: 8603 0x6BDB029: dlopen_doit (in /usr/lib64/libdl-2.17.so)
+        n1: 8603 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+         n1: 8603 0x6BDB62B: _dlerror_run (in /usr/lib64/libdl-2.17.so)
+          n1: 8603 0x6BDB0BF: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.17.so)
+           n1: 8603 0x72C8E9D: dlopen_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+            n1: 8603 0x72ACE2F: open_component (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+             n1: 8603 0x72AE1F8: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+              n1: 8603 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+               n1: 8603 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                n2: 8603 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                 n1: 4917 0x702CE8B: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                  n1: 4917 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+                   n1: 4917 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                    n1: 4917 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                     n1: 4917 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                      n1: 4917 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+                       n1: 4917 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+                        n1: 4917 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                         n0: 4917 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+                 n0: 3686 in 3 places, all below massif's threshold (01.00%)
+ n2: 5090 0x7293A53: opal_hash_table_set_value_ptr (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4665 0x72B3975: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4665 in 138 places, all below massif's threshold (01.00%)
+  n0: 425 in 1 place, below massif's threshold (01.00%)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+#-----------
+snapshot=43
+#-----------
+time=10044044
+mem_heap_B=361087
+mem_heap_extra_B=36689
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=10203557
+mem_heap_B=362875
+mem_heap_extra_B=36805
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=10329769
+mem_heap_B=365291
+mem_heap_extra_B=36965
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=10438886
+mem_heap_B=366719
+mem_heap_extra_B=37025
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=10594254
+mem_heap_B=304569
+mem_heap_extra_B=38599
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=10750108
+mem_heap_B=309051
+mem_heap_extra_B=40149
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=10919751
+mem_heap_B=332867
+mem_heap_extra_B=39997
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=11007308
+mem_heap_B=334660
+mem_heap_extra_B=40108
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=11078278
+mem_heap_B=334654
+mem_heap_extra_B=40082
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=11200603
+mem_heap_B=336454
+mem_heap_extra_B=40186
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=11295378
+mem_heap_B=338248
+mem_heap_extra_B=40312
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=11366721
+mem_heap_B=307140
+mem_heap_extra_B=41108
+mem_stacks_B=0
+heap_tree=detailed
+n10: 307140 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 149856 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n2: 40800 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 28000 in 137 places, all below massif's threshold (01.00%)
+  n1: 12800 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 12800 in 20 places, all below massif's threshold (01.00%)
+ n0: 32732 in 68 places, all below massif's threshold (01.00%)
+ n4: 32187 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 17818 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 17818 in 136 places, all below massif's threshold (01.00%)
+  n2: 7984 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 7806 0x72ACC01: save_filename (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 7806 0x72C8C80: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 7806 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 7806 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 7806 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 7806 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 7806 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+          n1: 7806 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+           n1: 7806 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 7806 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+             n1: 7806 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+              n1: 7806 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+               n1: 7806 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                n0: 7806 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 178 in 3 places, all below massif's threshold (01.00%)
+  n1: 3585 0x72B35DD: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 3585 in 137 places, all below massif's threshold (01.00%)
+  n0: 2800 in 27 places, all below massif's threshold (01.00%)
+ n2: 15312 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n2: 10904 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5800 in 10 places, all below massif's threshold (01.00%)
+   n1: 5104 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n0: 5104 in 11 places, all below massif's threshold (01.00%)
+  n0: 4408 in 3 places, all below massif's threshold (01.00%)
+ n3: 12129 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 5746 0x72B35FE: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5746 in 138 places, all below massif's threshold (01.00%)
+  n1: 5746 0x72B329A: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5746 in 138 places, all below massif's threshold (01.00%)
+  n0: 637 in 5 places, all below massif's threshold (01.00%)
+ n1: 9870 0x400AF8D: _dl_new_object (in /usr/lib64/ld-2.17.so)
+  n1: 9870 0x40060EA: _dl_map_object_from_fd (in /usr/lib64/ld-2.17.so)
+   n1: 9870 0x4008499: _dl_map_object (in /usr/lib64/ld-2.17.so)
+    n1: 9870 0x4013842: dl_open_worker (in /usr/lib64/ld-2.17.so)
+     n1: 9870 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+      n1: 9870 0x40131A9: _dl_open (in /usr/lib64/ld-2.17.so)
+       n1: 9870 0x6BDB029: dlopen_doit (in /usr/lib64/libdl-2.17.so)
+        n1: 9870 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+         n1: 9870 0x6BDB62B: _dlerror_run (in /usr/lib64/libdl-2.17.so)
+          n1: 9870 0x6BDB0BF: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.17.so)
+           n1: 9870 0x72C8E9D: dlopen_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+            n1: 9870 0x72ACE2F: open_component (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+             n1: 9870 0x72AE1F8: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+              n1: 9870 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+               n1: 9870 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                n2: 9870 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                 n1: 4955 0x702CF3C: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                  n1: 4955 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+                   n1: 4955 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                    n1: 4955 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                     n1: 4955 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                      n1: 4955 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+                       n1: 4955 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+                        n1: 4955 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                         n0: 4955 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+                 n0: 4915 in 4 places, all below massif's threshold (01.00%)
+ n2: 6062 0x7293A53: opal_hash_table_set_value_ptr (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 5491 0x72B3975: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5491 in 138 places, all below massif's threshold (01.00%)
+  n0: 571 in 1 place, below massif's threshold (01.00%)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+#-----------
+snapshot=55
+#-----------
+time=11434450
+mem_heap_B=310944
+mem_heap_extra_B=41696
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=11502627
+mem_heap_B=312996
+mem_heap_extra_B=42452
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=11579094
+mem_heap_B=323007
+mem_heap_extra_B=43089
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=11751748
+mem_heap_B=324498
+mem_heap_extra_B=43094
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=11818927
+mem_heap_B=318298
+mem_heap_extra_B=43806
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=11886909
+mem_heap_B=320570
+mem_heap_extra_B=44406
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=11954027
+mem_heap_B=322631
+mem_heap_extra_B=45033
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=12025505
+mem_heap_B=332792
+mem_heap_extra_B=45672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=12093052
+mem_heap_B=334800
+mem_heap_extra_B=46304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=12189484
+mem_heap_B=337246
+mem_heap_extra_B=46842
+mem_stacks_B=0
+heap_tree=detailed
+n11: 337246 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 158528 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 8672 0x703A8F8: orte_oob_base_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+   n1: 8672 0x72B7F54: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 8672 0x702CF50: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+     n1: 8672 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+      n1: 8672 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+       n1: 8672 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+        n1: 8672 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 8672 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+          n1: 8672 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+           n1: 8672 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+            n0: 8672 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n2: 47520 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 29440 in 138 places, all below massif's threshold (01.00%)
+  n4: 18080 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5120 in 32 places, all below massif's threshold (01.00%)
+   n1: 4320 0x72B7C4B: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 4320 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4160 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 4160 in 13 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+   n1: 4320 0x72B7C84: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 4320 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4160 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 4160 in 13 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+   n1: 4320 0x72B7CC0: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 4320 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4160 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 4160 in 13 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+ n4: 35150 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 20089 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 20089 in 137 places, all below massif's threshold (01.00%)
+  n2: 7984 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 7806 0x72ACC01: save_filename (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 7806 0x72C8C80: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 7806 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 7806 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 7806 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 7806 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 7806 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+          n1: 7806 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+           n1: 7806 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 7806 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+             n1: 7806 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+              n1: 7806 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+               n1: 7806 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                n0: 7806 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 178 in 3 places, all below massif's threshold (01.00%)
+  n1: 4145 0x72B35DD: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4145 in 138 places, all below massif's threshold (01.00%)
+  n0: 2932 in 27 places, all below massif's threshold (01.00%)
+ n0: 33761 in 71 places, all below massif's threshold (01.00%)
+ n2: 17400 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n2: 12528 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 6264 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n0: 6264 in 14 places, all below massif's threshold (01.00%)
+   n0: 6264 in 10 places, all below massif's threshold (01.00%)
+  n0: 4872 in 3 places, all below massif's threshold (01.00%)
+ n3: 14337 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 6800 0x72B35FE: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 6800 in 139 places, all below massif's threshold (01.00%)
+  n1: 6800 0x72B329A: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 6800 in 139 places, all below massif's threshold (01.00%)
+  n0: 737 in 5 places, all below massif's threshold (01.00%)
+ n1: 11097 0x400AF8D: _dl_new_object (in /usr/lib64/ld-2.17.so)
+  n1: 11097 0x40060EA: _dl_map_object_from_fd (in /usr/lib64/ld-2.17.so)
+   n1: 11097 0x4008499: _dl_map_object (in /usr/lib64/ld-2.17.so)
+    n1: 11097 0x4013842: dl_open_worker (in /usr/lib64/ld-2.17.so)
+     n1: 11097 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+      n1: 11097 0x40131A9: _dl_open (in /usr/lib64/ld-2.17.so)
+       n1: 11097 0x6BDB029: dlopen_doit (in /usr/lib64/libdl-2.17.so)
+        n1: 11097 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+         n1: 11097 0x6BDB62B: _dlerror_run (in /usr/lib64/libdl-2.17.so)
+          n1: 11097 0x6BDB0BF: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.17.so)
+           n1: 11097 0x72C8E9D: dlopen_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+            n1: 11097 0x72ACE2F: open_component (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+             n1: 11097 0x72AE1F8: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+              n1: 11097 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+               n1: 11097 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                n2: 11097 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                 n0: 6142 in 5 places, all below massif's threshold (01.00%)
+                 n1: 4955 0x702CF3C: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                  n1: 4955 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+                   n1: 4955 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                    n1: 4955 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                     n1: 4955 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                      n1: 4955 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+                       n1: 4955 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+                        n1: 4955 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                         n0: 4955 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n2: 7165 0x7293A53: opal_hash_table_set_value_ptr (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 6503 0x72B3975: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 6503 in 139 places, all below massif's threshold (01.00%)
+  n0: 662 in 1 place, below massif's threshold (01.00%)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 4096 0x7296D46: opal_pointer_array_add (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n2: 4096 0x72B392D: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 4096 0x72B7C84: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4096 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 4096 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 4096 0x702CF3C: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+        n1: 4096 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+         n1: 4096 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+          n1: 4096 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+           n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+             n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+              n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+               n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 0 in 1 place, below massif's threshold (01.00%)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+#-----------
+snapshot=65
+#-----------
+time=12257031
+mem_heap_B=341817
+mem_heap_extra_B=47583
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=12331961
+mem_heap_B=351898
+mem_heap_extra_B=47766
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=12429625
+mem_heap_B=351927
+mem_heap_extra_B=47721
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=12497021
+mem_heap_B=342863
+mem_heap_extra_B=48017
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=12569964
+mem_heap_B=374148
+mem_heap_extra_B=48428
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=12654493
+mem_heap_B=375599
+mem_heap_extra_B=48441
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=12754193
+mem_heap_B=377408
+mem_heap_extra_B=48552
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=12835968
+mem_heap_B=379187
+mem_heap_extra_B=48693
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=12945054
+mem_heap_B=380987
+mem_heap_extra_B=48829
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=13012516
+mem_heap_B=349756
+mem_heap_extra_B=49380
+mem_stacks_B=0
+heap_tree=detailed
+n11: 349756 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 161440 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 8672 0x703A8F8: orte_oob_base_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+   n1: 8672 0x72B7F54: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 8672 0x702CF50: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+     n1: 8672 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+      n1: 8672 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+       n1: 8672 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+        n1: 8672 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 8672 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+          n1: 8672 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+           n1: 8672 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+            n0: 8672 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n0: 2912 in 1 place, below massif's threshold (01.00%)
+ n2: 49760 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 30400 in 139 places, all below massif's threshold (01.00%)
+  n4: 19360 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5120 in 32 places, all below massif's threshold (01.00%)
+   n1: 4800 0x72B7C4B: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 4800 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4640 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 4640 in 15 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+   n1: 4800 0x72B7C84: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 4800 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4640 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 4640 in 15 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+   n1: 4640 0x72B7CC0: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 4640 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4480 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 4480 in 15 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+ n4: 35920 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 20545 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 20545 in 138 places, all below massif's threshold (01.00%)
+  n2: 8017 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 7806 0x72ACC01: save_filename (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 7806 0x72C8C80: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 7806 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 7806 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 7806 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 7806 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 7806 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+          n1: 7806 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+           n1: 7806 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 7806 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+             n1: 7806 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+              n1: 7806 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+               n1: 7806 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                n0: 7806 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 211 in 4 places, all below massif's threshold (01.00%)
+  n1: 4293 0x72B35DD: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4293 in 139 places, all below massif's threshold (01.00%)
+  n0: 3065 in 27 places, all below massif's threshold (01.00%)
+ n0: 35266 in 73 places, all below massif's threshold (01.00%)
+ n3: 19024 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n3: 13688 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 6960 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n0: 6960 in 14 places, all below massif's threshold (01.00%)
+   n1: 4176 0x72B3BE0: mca_base_framework_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 4176 0x72B7E66: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n0: 4176 in 2 places, all below massif's threshold (01.00%)
+   n0: 2552 in 9 places, all below massif's threshold (01.00%)
+  n1: 4176 0x72B7D92: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4176 in 2 places, all below massif's threshold (01.00%)
+  n0: 1160 in 2 places, all below massif's threshold (01.00%)
+ n3: 15003 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 7097 0x72B35FE: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 7097 in 140 places, all below massif's threshold (01.00%)
+  n1: 7097 0x72B329A: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 7097 in 140 places, all below massif's threshold (01.00%)
+  n0: 809 in 5 places, all below massif's threshold (01.00%)
+ n1: 13542 0x400AF8D: _dl_new_object (in /usr/lib64/ld-2.17.so)
+  n1: 13542 0x40060EA: _dl_map_object_from_fd (in /usr/lib64/ld-2.17.so)
+   n1: 13542 0x4008499: _dl_map_object (in /usr/lib64/ld-2.17.so)
+    n1: 13542 0x4013842: dl_open_worker (in /usr/lib64/ld-2.17.so)
+     n1: 13542 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+      n1: 13542 0x40131A9: _dl_open (in /usr/lib64/ld-2.17.so)
+       n1: 13542 0x6BDB029: dlopen_doit (in /usr/lib64/libdl-2.17.so)
+        n1: 13542 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+         n1: 13542 0x6BDB62B: _dlerror_run (in /usr/lib64/libdl-2.17.so)
+          n1: 13542 0x6BDB0BF: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.17.so)
+           n1: 13542 0x72C8E9D: dlopen_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+            n1: 13542 0x72ACE2F: open_component (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+             n1: 13542 0x72AE1F8: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+              n1: 13542 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+               n1: 13542 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                n2: 13542 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                 n0: 8607 in 7 places, all below massif's threshold (01.00%)
+                 n1: 4935 0x702D122: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                  n1: 4935 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+                   n1: 4935 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+                    n1: 4935 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                     n1: 4935 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+                      n1: 4935 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+                       n1: 4935 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+                        n1: 4935 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                         n0: 4935 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+ n2: 7513 0x7293A53: opal_hash_table_set_value_ptr (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 6786 0x72B3975: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 6786 in 140 places, all below massif's threshold (01.00%)
+  n0: 727 in 1 place, below massif's threshold (01.00%)
+ n1: 4096 0x68671BA: register_printf_specifier (in /usr/lib64/libc-2.17.so)
+  n1: 4096 0x63BF4D0: register_printf_flt128 (quadmath-printf.c:396)
+   n1: 4096 0x400F3A1: _dl_init (in /usr/lib64/ld-2.17.so)
+    n0: 4096 0x4001468: ??? (in /usr/lib64/ld-2.17.so)
+ n1: 4096 0x7296D46: opal_pointer_array_add (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n2: 4096 0x72B392D: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 4096 0x72B7C84: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4096 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 4096 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 4096 0x702CF3C: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+        n1: 4096 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+         n1: 4096 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+          n1: 4096 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+           n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+             n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+              n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+               n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 0 in 1 place, below massif's threshold (01.00%)
+ n1: 4096 0x72B2E78: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 4096 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4096 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+    n1: 4096 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 4096 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+      n1: 4096 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+       n1: 4096 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+        n0: 4096 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+#-----------
+snapshot=75
+#-----------
+time=13080145
+mem_heap_B=351627
+mem_heap_extra_B=49965
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=13147856
+mem_heap_B=351178
+mem_heap_extra_B=50190
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=13215458
+mem_heap_B=366102
+mem_heap_extra_B=50522
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=13295628
+mem_heap_B=367000
+mem_heap_extra_B=50576
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=13385872
+mem_heap_B=368785
+mem_heap_extra_B=50711
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=13455972
+mem_heap_B=354148
+mem_heap_extra_B=51436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=13523428
+mem_heap_B=373317
+mem_heap_extra_B=52131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=13597205
+mem_heap_B=383840
+mem_heap_extra_B=52480
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=13668495
+mem_heap_B=376179
+mem_heap_extra_B=52669
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=13741785
+mem_heap_B=379295
+mem_heap_extra_B=52961
+mem_stacks_B=0
+heap_tree=detailed
+n8: 379295 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n6: 178752 0x72934F8: opal_hash_table_init2 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 66272 0x72B2714: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+     n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+       n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+        n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+         n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 66272 0x72B4B64: mca_base_pvar_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 66272 0x72B2903: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 66272 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 66272 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 66272 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 66272 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 66272 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 66272 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 66272 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x72B6D14: mca_base_var_group_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 17312 0x72B28F3: mca_base_var_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x729840C: opal_init_util (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 17312 0x54CCC40: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+      n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+       n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+        n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+         n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+          n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 17312 0x8DC42C4: init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_db_hash.so)
+   n1: 17312 0x72C7FD2: opal_db_base_select (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 17312 0x702D1BC: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+     n1: 17312 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+      n1: 17312 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+       n1: 17312 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+        n1: 17312 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 17312 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+          n1: 17312 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+           n1: 17312 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+            n0: 17312 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n1: 8672 0x703A8F8: orte_oob_base_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+   n1: 8672 0x72B7F54: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 8672 0x702CF50: orte_ess_base_app_setup (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+     n1: 8672 0x85B6518: rte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/openmpi/mca_ess_env.so)
+      n1: 8672 0x700C2AE: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+       n1: 8672 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+        n1: 8672 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+         n1: 8672 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+          n1: 8672 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+           n1: 8672 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+            n0: 8672 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+  n0: 2912 in 1 place, below massif's threshold (01.00%)
+ n2: 53760 0x72B3538: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n0: 31040 in 139 places, all below massif's threshold (01.00%)
+  n4: 22720 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 5920 in 37 places, all below massif's threshold (01.00%)
+   n1: 5600 0x72B7C4B: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 5600 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 5440 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 5440 in 17 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+   n1: 5600 0x72B7C84: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 5600 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 5440 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 5440 in 17 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+   n1: 5600 0x72B7CC0: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 5600 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 5440 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 5440 in 17 places, all below massif's threshold (01.00%)
+     n0: 160 in 1 place, below massif's threshold (01.00%)
+ n0: 50715 in 83 places, all below massif's threshold (01.00%)
+ n4: 37060 0x689EAB8: strdup (in /usr/lib64/libc-2.17.so)
+  n1: 21221 0x72B35CC: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 21221 in 138 places, all below massif's threshold (01.00%)
+  n2: 8017 0x72B8475: opal_argv_append_nosize (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 7806 0x72ACC01: save_filename (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 7806 0x72C8C80: dlopen_foreachfile (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 7806 0x72AE2F3: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 7806 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n1: 7806 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+        n1: 7806 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+         n1: 7806 0x7298567: opal_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+          n1: 7806 0x700C16D: orte_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-rte.so.12.0.1)
+           n1: 7806 0x54CCDA3: ompi_mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+            n1: 7806 0x54EA099: PMPI_Init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi.so.12.0.1)
+             n1: 7806 0x5278FF6: mpi_init (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libmpi_mpifh.so.12.0.0)
+              n1: 7806 0x418024: __mpiemod_MOD_mpiinit (in /home/vsivadas/Susi/susi/bin/susi)
+               n1: 7806 0x44F78A: MAIN__ (in /home/vsivadas/Susi/susi/bin/susi)
+                n0: 7806 0x40672B: main (in /home/vsivadas/Susi/susi/bin/susi)
+   n0: 211 in 4 places, all below massif's threshold (01.00%)
+  n1: 4596 0x72B35DD: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 4596 in 139 places, all below massif's threshold (01.00%)
+  n0: 3226 in 29 places, all below massif's threshold (01.00%)
+ n3: 21112 0x72B6FCF: group_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n3: 15312 0x72B34ED: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n2: 8120 0x72B3B7E: mca_base_component_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n1: 4408 0x72B7C4B: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4408 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n1: 4408 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+       n0: 4408 in 10 places, all below massif's threshold (01.00%)
+    n0: 3712 in 16 places, all below massif's threshold (01.00%)
+   n1: 4640 0x72B3BE0: mca_base_framework_var_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n2: 4640 0x72B7E66: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+     n1: 4408 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+      n0: 4408 in 19 places, all below massif's threshold (01.00%)
+     n0: 232 in 1 place, below massif's threshold (01.00%)
+   n0: 2552 in 9 places, all below massif's threshold (01.00%)
+  n2: 4640 0x72B7D92: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n1: 4408 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+    n0: 4408 in 19 places, all below massif's threshold (01.00%)
+   n0: 232 in 1 place, below massif's threshold (01.00%)
+  n0: 1160 in 2 places, all below massif's threshold (01.00%)
+ n3: 16231 0x72B17AB: mca_base_var_generate_full_name4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 7667 0x72B35FE: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 7667 in 140 places, all below massif's threshold (01.00%)
+  n1: 7667 0x72B329A: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 7667 in 140 places, all below massif's threshold (01.00%)
+  n0: 897 in 5 places, all below massif's threshold (01.00%)
+ n1: 13528 0x400AF8D: _dl_new_object (in /usr/lib64/ld-2.17.so)
+  n1: 13528 0x40060EA: _dl_map_object_from_fd (in /usr/lib64/ld-2.17.so)
+   n1: 13528 0x4008499: _dl_map_object (in /usr/lib64/ld-2.17.so)
+    n1: 13528 0x4013842: dl_open_worker (in /usr/lib64/ld-2.17.so)
+     n1: 13528 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+      n1: 13528 0x40131A9: _dl_open (in /usr/lib64/ld-2.17.so)
+       n1: 13528 0x6BDB029: dlopen_doit (in /usr/lib64/libdl-2.17.so)
+        n1: 13528 0x400F1B2: _dl_catch_error (in /usr/lib64/ld-2.17.so)
+         n1: 13528 0x6BDB62B: _dlerror_run (in /usr/lib64/libdl-2.17.so)
+          n1: 13528 0x6BDB0BF: dlopen@@GLIBC_2.2.5 (in /usr/lib64/libdl-2.17.so)
+           n1: 13528 0x72C8E9D: dlopen_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+            n1: 13528 0x72ACE2F: open_component (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+             n1: 13528 0x72AE1F8: mca_base_component_find (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+              n1: 13528 0x72B7A21: mca_base_framework_components_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+               n1: 13528 0x72B7EB2: mca_base_framework_register (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                n1: 13528 0x72B7F00: mca_base_framework_open (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+                 n0: 13528 in 10 places, all below massif's threshold (01.00%)
+ n2: 8137 0x7293A53: opal_hash_table_set_value_ptr (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+  n1: 7331 0x72B3975: register_variable.isra.4 (in /cm/shared/apps/openmpi/gcc/64/1.10.1/lib64/libopen-pal.so.13.0.1)
+   n0: 7331 in 140 places, all below massif's threshold (01.00%)
+  n0: 806 in 1 place, below massif's threshold (01.00%)
+#-----------
+snapshot=85
+#-----------
+time=13815493
+mem_heap_B=382177
+mem_heap_extra_B=54095
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=38840396096
+mem_heap_B=381989
+mem_heap_extra_B=54059
+mem_stacks_B=0
+heap_tree=empty

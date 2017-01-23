@@ -1,0 +1,97 @@
+#!/usr/bin/python
+import traceback
+from susipop import reader as susi
+from susipop import filter as filt
+import numpy as np
+import os
+import sys
+
+dir_opt = str(sys.argv[1])
+
+try:
+    analysis_opt = str(sys.argv[2])
+except:
+    analysis_opt = None
+
+def get_folder_list():
+   list = next(os.walk('.'))[1]
+   return list
+
+#dirs = ['./phi0.1_yd10.0','./phi0.2_yd10.0','./phi0.3_yd10.0','./phi0.4_yd10.0','./phi0.5_yd10.0']
+if dir_opt == 'all':
+    dirs = get_folder_list()
+else:
+    dirs = [dir_opt]
+
+if analysis_opt == None :
+    ialist = ['tot','hd','lub','rep','fric']
+else:
+    ialist = [str(sys.argv[2:])]
+
+for dir in dirs:
+    try:
+        print dir
+        print '----------------------------'
+        exp = susi.DataSet(dir,fluid=True,particles=True)
+        print 'exp        ',dir
+        # print 'tlist      ',exp.tlist
+        print 'volume     ',exp.volume
+        print 'dx         ',exp.dx
+        print 'dt         ',exp.dt
+        tmax = exp.tlist[len(exp.tlist)-1]
+        exp.LoadState(exp.tlist[0])
+	#nu_fluid = exp.fluidconfig.get('viscshear')['constant']['nu']
+        nu_fluid = 1.002e-3
+#        print 'yd         ',exp.shearrate
+#        print 'Re         ',exp.Re
+
+        # open files
+        sfiles = dict()
+        for ia in ialist:
+            sfiles[ia] = open(exp.resultdir+'/part_stress_'+ia+'_t.dat','w')
+            intfluidstressfile = open(exp.resultdir+'/part_stress_intfluid_t.dat','w')
+            fluidstressfile = open(exp.resultdir+'/fluid_stress_t.dat','w')
+            nufile = open(exp.resultdir+'/nu_t.dat','w')
+
+        print 'time\tprog\tnu mean\tnu sigma\tnu mean_relative\tnu sigma_relative'
+        for t in exp.tlist[1:]:
+
+            # particle stress
+            for ia in ialist:
+                s = filt.MeanParticlesStress(exp,'shear',ia,1,t,cache=True)
+                sfiles[ia].write(str(t)+','+str(t*exp.dt)+','+str(s.mean)+','+str(s.sigma)+'\n')
+            # internal fluid stress
+            s = filt.MeanInternalFluidShearStress(exp,t)
+            intfluidstressfile.write(str(t)+','+str(t*exp.dt)+','+str(s.mean)+','+str(s.sigma)+'\n')
+            # fluid stress
+            s = filt.MeanFluidShearStress(exp,t)
+            fluidstressfile.write(str(t)+','+str(t*exp.dt)+','+str(s.mean)+','+str(s.sigma)+'\n')
+            # viscosity
+            nu = filt.Viscosity(exp,t)
+            #nu = 1.002e-6
+	    nufile.write(str(t)+','+str(t*exp.dt)+','+str(nu.mean)+','+str(nu.sigma)+','+str(nu.mean/nu_fluid)+','+str(nu.sigma/nu_fluid)+'\n')
+
+            # progress output
+            progress = "{:.3F}".format(float(t)/float(tmax))
+            numeanout = "{:.5E}".format(nu.mean)
+            nusigmaout = "{:.5E}".format(nu.sigma)
+	    numeanout_rel = float(numeanout)/float(nu_fluid)
+	    nusigmaout_rel = float(nusigmaout)/float(nu_fluid)
+            print str(t)+'\t'+progress+'\t'+numeanout+'\t'+nusigmaout+'\t'+str(numeanout_rel)+'\t'+str(nusigmaout_rel)
+
+
+        for ia in ialist:
+            sfiles[ia].close()
+            intfluidstressfile.close()
+            fluidstressfile.close()
+            nufile.close()
+    except:
+	traceback.print_exc()
+        continue
+	
+#os.system(""" gnuplot -e 'plot for [file in system("find . -type f -iname nu_t.dat")] file  u 2:5 w lp t file; pause -1' """)
+
+
+
+
+

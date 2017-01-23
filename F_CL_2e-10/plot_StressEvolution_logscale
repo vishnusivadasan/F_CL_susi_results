@@ -1,0 +1,87 @@
+#!/usr/bin/python
+from susipop import reader
+import numpy as np
+import matplotlib as mpl
+mpl.use('Agg')
+from matplotlib import pyplot as plt
+from matplotlib.font_manager import FontProperties
+fontP = FontProperties()
+fontP.set_size('small')
+
+import pandas as pd
+import os 
+import sys
+
+phi = str(sys.argv[1])
+yd_list =  np.array((sys.argv[2:]))
+
+paths = ["rhor1_phi"+phi+"_yd"+yd for yd in yd_list]
+
+def get_dat_files(path):
+    f = []
+    for (dirpath, dirnames, filenames) in os.walk(path):
+        f.extend(filenames)
+        break
+    idx = []
+    for i in range(len(f)):
+        if f[i][-3:] != 'dat': idx.append(i)
+    f = np.array(f)
+    f = np.delete(f, idx)
+    return f
+
+
+db = dict()
+for yd in yd_list: 
+    try:
+        db[yd] = dict()
+        path = "rhor1_phi" + phi + "_yd" + yd + "/result/"
+        files = get_dat_files(path)
+        for f in files:
+            db[yd][f.split(".")[0][:-2]] = dict()
+            df = pd.read_csv(path+f,sep=',')
+            if f != 'nu_t.dat':
+                db[yd][f.split(".")[0][:-2]]['mean'] =  np.mean(df[df.columns[2]][-50:])
+                db[yd][f.split(".")[0][:-2]]['sigma'] = np.mean(df[df.columns[3]][-50:])    
+            else:
+                db[yd][f.split(".")[0][:-2]]['mean'] =  np.mean(df[df.columns[4]][-50:])
+                db[yd][f.split(".")[0][:-2]]['sigma'] = np.mean(df[df.columns[5]][-50:])
+    except:
+        continue
+        
+db_S = dict()
+stress_list = [f.split(".")[0][:-2] for f in files]
+for stress in stress_list:
+    db_S[stress] = [[],[],[]]
+    for yd in yd_list:
+        try:
+            db_S[stress][0].append(yd)
+            db_S[stress][1].append(db[yd][stress]['mean'])       
+            db_S[stress][2].append(db[yd][stress]['sigma'])
+        except:
+            continue
+
+       
+
+plt.figure(figsize=[10,10])
+cmap = plt.get_cmap('jet_r')
+cmap = plt.get_cmap('nipy_spectral')
+N = len(stress_list)
+
+plt.xlabel("Strain rate (1/s)")
+plt.ylabel("Stresses(N)")
+plt.xscale("log")
+plt.yscale("log")
+plt.ylim([1e-8,1e4])
+plt.title("Shear Stress vs Shear Rate")
+for i,stress in enumerate(stress_list):
+    yd = db_S[stress][0]
+    mean = db_S[stress][1]
+    sigma = db_S[stress][2]
+    color = cmap(float(i)/N)
+    plt.errorbar(yd, mean, yerr = sigma, color=color, label = stress)
+plt.legend(loc ='upper center',bbox_to_anchor=(0.5, 1.05), ncol=3)
+
+plt.suptitle("Stress evolution over shear rate for phi="+phi)
+plt.savefig("StressEvolutionOverShearRate_phi_logscale"+str(phi))    
+
+    

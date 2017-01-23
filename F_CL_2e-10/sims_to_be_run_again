@@ -1,0 +1,12 @@
+101 ./rhor1_phi55_yd50.0/result/nu_t.dat running
+100 ./rhor1_phi55_yd70.0/result/nu_t.dat running 
+
+101 ./rhor1_phi55_yd20.0/result/nu_t.dat
+101 ./rhor1_phi50_yd30.0/result/nu_t.dat
+101 ./rhor1_phi50_yd300.0/result/nu_t.dat
+77 ./rhor1_phi55_yd15.0/result/nu_t.dat
+49 ./rhor1_phi50_yd50.0/result/nu_t.dat
+42 ./rhor1_phi50_yd20.0/result/nu_t.dat
+36 ./rhor1_phi45_yd50.0/result/nu_t.dat
+34 ./rhor1_phi50_yd70.0/result/nu_t.dat
+18 ./rhor1_phi40_yd50.0/result/nu_t.dat

@@ -1,0 +1,1 @@
+cd ./rhor1_phi55_yd3.0 && susi_Setup && pwd && export OMP_NUM_THREADS=8 && time mpirun -n 4 -npernode 8 -mca btl ^usnic -output-filename out susi && cd ..

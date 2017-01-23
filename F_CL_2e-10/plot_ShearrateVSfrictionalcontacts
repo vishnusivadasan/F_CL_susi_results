@@ -1,0 +1,58 @@
+#!/usr/bin/python
+import itertools
+import os
+from susipop import filter
+from susipop import reader
+import numpy as np
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+import sys 
+
+phivals = [float(i)/100.0 for i in sys.argv[1:]]
+
+def get_folder_list():
+    f = next(os.walk('.'))[1]
+    return f
+
+def sort_data(x,y):
+    lists = sorted(itertools.izip(*[x, y]))
+    new_x, new_y = list(itertools.izip(*lists))
+    return new_x, new_y
+
+folders = get_folder_list()
+
+db = dict()
+
+for phi in phivals:
+    db[phi] = [[],[]]
+ 
+for folder in folders:
+  try:
+    exp = reader.DataSet(folder, fluid=False, particles=True)   
+    if len(exp.tlist) > 1:
+        exp.LoadState(exp.tlist[-1])
+    else:
+        continue
+    num_part_fric = len(np.where(np.asarray([np.linalg.norm(i) for i in exp.particles.Sshear_fric])!= 0)[0]) #number of particles in friction
+    percent_part_fric = float(num_part_fric)/float(exp.npart)*100.0
+    #print folder,'\t', percent_part_fric
+    phi = exp.config['material']['particles']['0']['phi']
+    db[phi][0].append(exp.shearrate)
+    db[phi][1].append(percent_part_fric)
+  except:
+    continue
+plt.figure(figsize=[10,10])
+
+for phi in phivals:
+    plt.xscale('log')
+    plt.xlabel('Shear Rate 1/s')
+    #plt.xlim([0,1000.0])
+    plt.ylabel('percentage of frictional contacts')
+    data = np.asarray(sort_data(db[phi][0], db[phi][1]))
+    plt.plot(data[0], data[1], label = "phi = "+str(phi))    
+    plt.legend(loc = 'best')
+
+name = 'shearrate_vs_frcitionalcontacts'
+plt.savefig(name)
+

@@ -1,0 +1,4 @@
+cd rhor1_phi45_yd100.0/ && susi_CleanRun && susi_Setup && pwd && export OMP_NUM_THREADS=16 && time mpirun -n 4 -npernode 16 -mca btl ^usnic -output-filename out susi && cd ..
+cd rhor1_phi45_yd10.0/ && susi_CleanRun && susi_Setup && pwd && export OMP_NUM_THREADS=16 && time mpirun -n 4 -npernode 16 -mca btl ^usnic -output-filename out susi && cd ..
+cd rhor1_phi45_yd1.0/ && susi_CleanRun && susi_Setup && pwd && export OMP_NUM_THREADS=16 && time mpirun -n 4 -npernode 16 -mca btl ^usnic -output-filename out susi && cd ..
+#cd rhor1_phi45_yd1000.0/ && susi_CleanRun && susi_Setup && pwd && export OMP_NUM_THREADS=16 && time mpirun -n 4 -npernode 16 -mca btl ^usnic -output-filename out susi && cd ..

@@ -1,0 +1,82 @@
+{
+  "experiment_name": "timing",
+  "num_ranks": 4,
+  "metrics": [
+    {
+      "identifier": "MPI: particle handling",
+      "timers": { "rank_0": 1865.70, "rank_1": 3559.36, "rank_2": 1950.21, "rank_3": 4059.58 }
+    },
+    {
+      "identifier": "MPI: particle (overhead)",
+      "timers": { "rank_0": 118958.98, "rank_1": 122674.69, "rank_2": 115084.01, "rank_3": 115212.15 }
+    },
+    {
+      "identifier": "MPI: particle",
+      "timers": { "rank_0": 2769126.18, "rank_1": 1903135.88, "rank_2": 2326022.35, "rank_3": 1390153.25 }
+    },
+    {
+      "identifier": "CPU: particle handling",
+      "timers": { "rank_0": 13589.83, "rank_1": 16165.25, "rank_2": 12488.76, "rank_3": 16310.73 }
+    },
+    {
+      "identifier": "CPU: particle mapping",
+      "timers": { "rank_0": 3724.94, "rank_1": 3828.11, "rank_2": 3711.69, "rank_3": 3735.25 }
+    },
+    {
+      "identifier": "Copy: CPU -> GPU",
+      "timers": { "rank_0": 1353.77, "rank_1": 1680.19, "rank_2": 1686.49, "rank_3": 1432.17 }
+    },
+    {
+      "identifier": "CL: PartMapLP",
+      "timers": { "rank_0": 3355.84, "rank_1": 3444.63, "rank_2": 3345.03, "rank_3": 3354.91 }
+    },
+    {
+      "identifier": "Copy: GPU -> CPU",
+      "timers": { "rank_0": 1331.14, "rank_1": 1639.86, "rank_2": 1668.52, "rank_3": 2334.00 }
+    },
+    {
+      "identifier": "CL: LEGalilei",
+      "timers": { "rank_0": 216.32, "rank_1": 225.21, "rank_2": 220.66, "rank_3": 231.62 }
+    },
+    {
+      "identifier": "CL: LEShift",
+      "timers": { "rank_0": 146.77, "rank_1": 149.59, "rank_2": 145.71, "rank_3": 151.24 }
+    },
+    {
+      "identifier": "CL: PropagateCollide",
+      "timers": { "rank_0": 6483.48, "rank_1": 6422.07, "rank_2": 6195.00, "rank_3": 6261.74 }
+    },
+    {
+      "identifier": "OMP: part ext forces",
+      "timers": { "rank_0": 33075.73, "rank_1": 32064.80, "rank_2": 27305.56, "rank_3": 28090.79 }
+    },
+    {
+      "identifier": "OMP: part int forces",
+      "timers": { "rank_0": 5193.52, "rank_1": 5677.15, "rank_2": 4539.08, "rank_3": 5149.51 }
+    },
+    {
+      "identifier": "OMP: part-part forces",
+      "timers": { "rank_0": 134734.56, "rank_1": 140703.12, "rank_2": 120720.33, "rank_3": 137258.36 }
+    },
+    {
+      "identifier": "MPI: particle forces (overhead)",
+      "timers": { "rank_0": 86444.78, "rank_1": 93790.10, "rank_2": 83895.91, "rank_3": 92742.97 }
+    },
+    {
+      "identifier": "MPI: particle forces",
+      "timers": { "rank_0": 2888166.48, "rank_1": 1994737.49, "rank_2": 2771105.13, "rank_3": 2148268.54 }
+    },
+    {
+      "identifier": "OMP: particle dynamics",
+      "timers": { "rank_0": 35962.86, "rank_1": 35895.70, "rank_2": 36472.70, "rank_3": 36200.51 }
+    },
+    {
+      "identifier": "I/O: output",
+      "timers": { "rank_0": 10949.76, "rank_1": 12096.66, "rank_2": 10964.76, "rank_3": 12833.06 }
+    },
+    {
+      "identifier": "ALL: total time",
+      "timers": { "rank_0": 8478511.03, "rank_1": 8478445.60, "rank_2": 8478447.73, "rank_3": 8478446.25 }
+    }
+  ]
+}

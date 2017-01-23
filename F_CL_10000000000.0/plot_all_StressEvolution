@@ -1,0 +1,5 @@
+./plot_StressEvolution_logscale 40 1.0 10.0 30.0 60.0 80.0 100.0 200.0 300.0 500.0 800.0 1000.0 3000.0
+./plot_StressEvolution_logscale 45 1.0 10.0 100.0 1000.0
+./plot_StressEvolution_logscale 50 1.0 10.0 100.0 1000.0 
+./plot_StressEvolution_logscale 55 1.0 3.0 8.0 10.0 30.0 60.0 100.0 300.0 1000.0 10000.0
+./plot_StressEvolution_logscale 60 1.0 10.0 100.0 1000.0
