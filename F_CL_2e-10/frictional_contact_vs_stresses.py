@@ -1,4 +1,8 @@
 
+# coding: utf-8
+
+# In[92]:
+
 #!/usr/bin/python
 import itertools
 import os
@@ -13,7 +17,10 @@ import pandas as pd
 from IPython.html.widgets import FloatProgress
 from IPython.display import display
 import ipywidgets as widgets
-#%matplotlib notebook
+#get_ipython().magic(u'matplotlib notebook')
+
+
+# In[93]:
 
 #phivals = [float(i)/100.0 for i in sys.argv[1:]]
 phivals = [0.4, 0.45, 0.5, 0.54, 0.55, 0.56]
@@ -25,6 +32,9 @@ def sort_data(x,y):
     lists = sorted(itertools.izip(*[x, y]))
     new_x, new_y = list(itertools.izip(*lists))
     return new_x, new_y
+
+
+# In[94]:
 
 folders = get_folder_list()
 
@@ -48,8 +58,17 @@ for num,folder in enumerate(np.sort(folders[:])):
         exp.LoadState(exp.tlist[-1])
         max_strain = float(exp.t)*exp.shearrate*exp.dt
         n = len(exp.tlist[2:])
-        if max_strain >= 2.0:
-            n_last_strain = n-int(float(n)/max_strain)
+#         if max_strain >= 2.0:
+#             n_last_strain = n-int(float(n)/max_strain)
+#         elif max_strain >= 3.0:
+#             n_last_strain = n-int(float(n)/max_strain)*2
+#         elif max_strain >= 4.0:
+#             n_last_strain = n-int(float(n)/max_strain)*3
+#         else:
+#             n_last_strain = -10
+
+        if max_strain >= 1.0:
+            n_last_strain = int(float(n)/max_strain)
         else:
             n_last_strain = -10
             
@@ -84,6 +103,9 @@ for num,folder in enumerate(np.sort(folders[:])):
         continue
         
 
+
+# In[95]:
+
 plt.style.use('seaborn-deep')
 
 plt.figure(figsize=[18,9])
@@ -111,6 +133,8 @@ for phi in phivals:
 plt.savefig('frictional_contact_vs_shearstress_and_shearrate')
 
 
+# In[96]:
+
 plt.figure(figsize=[12,15])
 for i,p in enumerate(np.sort(db.keys())):
     plt.subplot(len(db.keys())/2,2,i+1)
@@ -123,7 +147,48 @@ for i,p in enumerate(np.sort(db.keys())):
     plt.legend(loc='upper left')
 plt.savefig('frictional_contact_vs_shearstress_individual_phi')
 
-#plt.style.available
+
+# In[99]:
+
+from collections import OrderedDict
+import matplotlib.pyplot as plt
+
+NUM_COLORS = 14
+
+cm = plt.get_cmap('gist_rainbow')
+
+fig = plt.figure(figsize=[12,15])
+for i,p in enumerate(np.sort(db.keys())):
+    db[p] = np.asarray(db[p])
+    ax = fig.add_subplot(len(db.keys())/2,2,i+1)
+    ax.set_color_cycle([cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
+    for s in np.unique(db[p][0]):
+        idx = np.where(db[p][0]==s)[0]
+        if len(idx) >= 1 :
+            plt.plot(db[p][1][idx],db[p][2][idx],'o',label="phi ="+str(p)+"yd="+str(round(s)))
+            plt.xlim([1e-3,1e3])
+            plt.xscale('log')
+            plt.xlabel('Shear Stress (Pa)')
+            plt.ylabel('percentage of frictional contacts')
+            plt.title("shearstress vs frictional contacts for phi = "+str(p))
+            plt.legend(loc='upper left')
+plt.savefig('frictional_contact_vs_shearstress_individual_phi')
 
 
+# In[103]:
+
+for i,p in enumerate(np.sort(db.keys())):
+    plt.figure(figsize=[12,2.4*len(np.unique(db[p][0]))])
+    for j,s in enumerate(np.unique(db[p][0])):
+        plt.subplot(len(np.unique(db[p][0]))/2+1,2,j+1)
+        idx = np.where(db[p][0]==s)[0]
+        plt.plot(db[p][1][idx],db[p][2][idx],'o',label="phi ="+str(p)+"yd="+str(round(s)))
+        plt.xlim([1e-3,1e3])
+        plt.ylim([0,100.0])
+        plt.xscale('log')
+        plt.xlabel('Shear Stress (Pa)')
+        plt.ylabel('percentage of frictional contacts')
+        plt.title("shearstress vs frictional contacts for phi = "+str(p)+"yd="+str(round(s)))
+        plt.legend(loc='upper left')
+    plt.savefig('frictional_contact_vs_shearstress_individual_phi_individual_case_phi'+str(int(p*100)))
 

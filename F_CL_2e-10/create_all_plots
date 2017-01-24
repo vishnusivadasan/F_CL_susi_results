@@ -23,8 +23,8 @@
 ./plot_StressEvolution_logscale 55 1.0 10.0 15.0 20.0 30.0 50.0 70.0 100.0 1000.0
 ./plot_StressEvolution_logscale 56 1.0 10.0 15.0 20.0 30.0 50.0 70.0 100.0 300.0
 
-#./plot_ShearrateVSfrictionalcontacts 40 45 50 54 56  
-#./plot_SheastressVSfrictionalcontacts 40 45 50 54 56
+./plot_ShearrateVSfrictionalcontacts 40 45 50 54 56  
+./plot_SheastressVSfrictionalcontacts 40 45 50 54 56
 
 python frictional_contact_vs_stresses.py
 python NormalStresses_Shearrate.py
