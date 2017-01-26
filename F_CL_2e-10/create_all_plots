@@ -26,8 +26,8 @@
 ./plot_ShearrateVSfrictionalcontacts 40 45 50 54 56  
 ./plot_SheastressVSfrictionalcontacts 40 45 50 54 56
 
-python frictional_contact_vs_stresses.py
-python NormalStresses_Shearrate.py
+#python frictional_contact_vs_stresses.py
+#python NormalStresses_Shearrate.py
 
 #./plot_NormalStressDifferences
 ./plot_flow_curve_shearstress_vs_shearrate_log
