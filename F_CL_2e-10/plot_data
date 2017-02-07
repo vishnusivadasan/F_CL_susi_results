@@ -69,7 +69,8 @@ def plot_all_files_in_dir(path0):
         
         plt.ylabel(f[:-3])
         plt.xlabel('Strain')
-    plt.savefig(path[:-10]+"_plots")
+    path = path.replace(".","_")
+    plt.savefig(path[:-8]+"_plots")
 
 
 # # Analysis
