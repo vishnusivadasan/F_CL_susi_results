@@ -7,5 +7,5 @@ sample/
 data/
 exp/
 state/
-
+*.png
 
