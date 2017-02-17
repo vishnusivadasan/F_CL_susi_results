@@ -9,3 +9,4 @@ exp/
 state/
 *.png
 *cache.h5
+progress
