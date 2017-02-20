@@ -77,7 +77,7 @@ for i,stress in enumerate(stress_list):
     sigma = db_S[stress][2]
     color = cmap(float(i)/N)
     plt.errorbar(yd, mean, yerr = sigma,color=color, label = stress)
-plt.legend(loc ='upper center',bbox_to_anchor=(0.5, 1.05), ncol=3)
+plt.legend(loc ='upper center',bbox_to_anchor=(1.0, 1.05), ncol=1,prop={'size':8})
 
 plt.subplot(1,2,2)
 plt.xlabel("Strain rate (1/s)")
@@ -91,7 +91,7 @@ for i,stress in enumerate(stress_list):
     sigma = db_S[stress][2]
     color = cmap(float(i)/N)
     plt.errorbar(yd, mean, yerr = sigma, color=color, label = stress)
-plt.legend(loc ='upper center',bbox_to_anchor=(0.5, 1.05), ncol=3)
+plt.legend(loc ='upper center',bbox_to_anchor=(1.0, 1.05), ncol=1,prop={'size':8})
 
 plt.suptitle("Stress evolution over shear rate for phi="+phi+" ---- left(linear Scale), Right(log Scale)")
 plt.savefig("StressEvolutionOverShearRate_phi"+str(phi))    
