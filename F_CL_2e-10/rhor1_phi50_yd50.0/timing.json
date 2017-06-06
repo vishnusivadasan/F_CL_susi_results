@@ -3,80 +3,96 @@
   "num_ranks": 4,
   "metrics": [
     {
-      "identifier": "MPI: particle handling",
-      "timers": { "rank_0": 3092.09, "rank_1": 1318.83, "rank_2": 3020.31, "rank_3": 3115.28 }
+      "identifier": "MPI OH: particle handling",
+      "timers": { "rank_0": 10999.35, "rank_1": 11940.15, "rank_2": 11108.27, "rank_3": 11018.38 }
     },
     {
-      "identifier": "MPI: particle (overhead)",
-      "timers": { "rank_0": 104770.60, "rank_1": 100956.10, "rank_2": 100345.37, "rank_3": 94401.63 }
-    },
-    {
-      "identifier": "MPI: particle",
-      "timers": { "rank_0": 3242137.95, "rank_1": 3169404.55, "rank_2": 3246574.71, "rank_3": 2712770.32 }
+      "identifier": "MPI: particles",
+      "timers": { "rank_0": 12467667.32, "rank_1": 10032091.31, "rank_2": 14695793.27, "rank_3": 10718801.81 }
     },
     {
       "identifier": "CPU: particle handling",
-      "timers": { "rank_0": 13691.24, "rank_1": 10325.21, "rank_2": 13207.48, "rank_3": 13874.92 }
+      "timers": { "rank_0": 56655.84, "rank_1": 60767.19, "rank_2": 56093.92, "rank_3": 54157.16 }
     },
     {
-      "identifier": "CPU: particle mapping",
-      "timers": { "rank_0": 70907.44, "rank_1": 73708.41, "rank_2": 69814.26, "rank_3": 71073.08 }
+      "identifier": "CPU: prepare hdpart",
+      "timers": { "rank_0": 25138.12, "rank_1": 27304.66, "rank_2": 24849.60, "rank_3": 25447.12 }
     },
     {
       "identifier": "Copy: CPU -> GPU",
-      "timers": { "rank_0": 25489.91, "rank_1": 32912.29, "rank_2": 31107.13, "rank_3": 27001.78 }
+      "timers": { "rank_0": 199646.50, "rank_1": 240743.76, "rank_2": 237229.72, "rank_3": 202806.03 }
+    },
+    {
+      "identifier": "Copy: hdpart->GPU",
+      "timers": { "rank_0": 53748.09, "rank_1": 64026.73, "rank_2": 61076.64, "rank_3": 56271.46 }
     },
     {
       "identifier": "CL: PartMapLP",
-      "timers": { "rank_0": 64212.20, "rank_1": 66830.85, "rank_2": 63564.93, "rank_3": 64291.73 }
+      "timers": { "rank_0": 671203.77, "rank_1": 687062.10, "rank_2": 659534.70, "rank_3": 655164.67 }
     },
     {
       "identifier": "Copy: GPU -> CPU",
-      "timers": { "rank_0": 25578.03, "rank_1": 31180.27, "rank_2": 30341.69, "rank_3": 25344.49 }
+      "timers": { "rank_0": 208586.66, "rank_1": 251851.20, "rank_2": 255058.30, "rank_3": 210720.85 }
     },
     {
       "identifier": "CL: LEGalilei",
-      "timers": { "rank_0": 6056.98, "rank_1": 6373.66, "rank_2": 5880.60, "rank_3": 6399.70 }
+      "timers": { "rank_0": 110305.16, "rank_1": 121514.23, "rank_2": 117417.56, "rank_3": 109428.96 }
     },
     {
       "identifier": "CL: LEShift",
-      "timers": { "rank_0": 2963.34, "rank_1": 3124.98, "rank_2": 2898.18, "rank_3": 3158.79 }
+      "timers": { "rank_0": 33620.18, "rank_1": 33798.05, "rank_2": 34915.61, "rank_3": 31650.00 }
     },
     {
       "identifier": "CL: PropagateCollide",
-      "timers": { "rank_0": 129936.76, "rank_1": 129748.14, "rank_2": 125520.00, "rank_3": 124643.88 }
+      "timers": { "rank_0": 1261838.31, "rank_1": 1232921.11, "rank_2": 1237718.40, "rank_3": 1239206.47 }
     },
     {
       "identifier": "OMP: part ext forces",
-      "timers": { "rank_0": 34760.98, "rank_1": 34999.90, "rank_2": 32311.72, "rank_3": 29839.87 }
-    },
-    {
-      "identifier": "OMP: part int forces",
-      "timers": { "rank_0": 6389.56, "rank_1": 6547.39, "rank_2": 5276.90, "rank_3": 5263.65 }
+      "timers": { "rank_0": 116256.38, "rank_1": 118929.35, "rank_2": 123208.52, "rank_3": 110530.73 }
     },
     {
       "identifier": "OMP: part-part forces",
-      "timers": { "rank_0": 112898.15, "rank_1": 118223.74, "rank_2": 104603.63, "rank_3": 109481.68 }
-    },
-    {
-      "identifier": "MPI: particle forces (overhead)",
-      "timers": { "rank_0": 74854.84, "rank_1": 83182.24, "rank_2": 73254.44, "rank_3": 82691.78 }
+      "timers": { "rank_0": 444949.68, "rank_1": 462339.74, "rank_2": 435750.06, "rank_3": 433005.30 }
     },
     {
       "identifier": "MPI: particle forces",
-      "timers": { "rank_0": 4156677.81, "rank_1": 3491488.46, "rank_2": 4300805.38, "rank_3": 3864337.83 }
+      "timers": { "rank_0": 540938.86, "rank_1": 592181.48, "rank_2": 581594.87, "rank_3": 670905.64 }
     },
     {
       "identifier": "OMP: particle dynamics",
-      "timers": { "rank_0": 33668.90, "rank_1": 32402.43, "rank_2": 32510.26, "rank_3": 31463.79 }
+      "timers": { "rank_0": 69543.46, "rank_1": 69724.75, "rank_2": 66994.90, "rank_3": 68209.49 }
     },
     {
       "identifier": "I/O: output",
-      "timers": { "rank_0": 57456.21, "rank_1": 63021.03, "rank_2": 58223.99, "rank_3": 63465.61 }
+      "timers": { "rank_0": 515569.78, "rank_1": 576686.64, "rank_2": 512469.52, "rank_3": 567333.81 }
+    },
+    {
+      "identifier": "MPI:",
+      "timers": { "rank_0": 13008606.18, "rank_1": 10624272.79, "rank_2": 15277388.14, "rank_3": 11389707.46 }
+    },
+    {
+      "identifier": "CPU:",
+      "timers": { "rank_0": 81793.96, "rank_1": 88071.86, "rank_2": 80943.51, "rank_3": 79604.28 }
+    },
+    {
+      "identifier": "OMP:",
+      "timers": { "rank_0": 630749.52, "rank_1": 650993.83, "rank_2": 625953.49, "rank_3": 611745.52 }
+    },
+    {
+      "identifier": "CL:",
+      "timers": { "rank_0": 2076967.41, "rank_1": 2075295.50, "rank_2": 2049586.27, "rank_3": 2035450.10 }
+    },
+    {
+      "identifier": "Copy:",
+      "timers": { "rank_0": 461981.25, "rank_1": 556621.69, "rank_2": 553364.67, "rank_3": 469798.34 }
+    },
+    {
+      "identifier": "I/O:",
+      "timers": { "rank_0": 515569.78, "rank_1": 576686.64, "rank_2": 512469.52, "rank_3": 567333.81 }
     },
     {
       "identifier": "ALL: total time",
-      "timers": { "rank_0": 12105859.44, "rank_1": 12105392.67, "rank_2": 12105654.77, "rank_3": 12105505.62 }
+      "timers": { "rank_0": 25778285.15, "rank_1": 25778249.19, "rank_2": 25778337.38, "rank_3": 25778244.15 }
     }
   ]
 }

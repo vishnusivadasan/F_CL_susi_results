@@ -10,6 +10,7 @@ from matplotlib.legend_handler import HandlerLine2D
 
 proc = subprocess.Popen('find . -maxdepth 4 -type f -iname "nu_t.dat" ',shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 nu_files = proc.communicate()[0].split()
+plt.style.use('seaborn-white')
 
 # os.mkdir('nu_files')
 # for file in nu_files:

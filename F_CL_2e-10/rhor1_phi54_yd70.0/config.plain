@@ -22,7 +22,7 @@ config_state_partinit_lattice_random	1.0
 config_state_partinit_lattice_dmin	0.05
 config_state_partinit_type	lattice
 config_state_type	generated
-config_experiment_tmaxLU	471772
+config_experiment_tmaxLU	858860
 config_experiment_temperature	300.0
 config_experiment_shearrate_type	constant
 config_experiment_shearrate_constant_yd	70.0

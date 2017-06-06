@@ -15,7 +15,7 @@ def einstein(p):
     return 1+ 2.5*p + 7.17*p**2 + 16.2*p**3
 
 def kd(p):
-    return (1-(p/0.64))**(-(2.5*0.64))
+    return (1-(p/0.63))**(-(2.5*0.63))
 def guth_simha(p):
     return 1+ 2.5*p + 14.1*p**2 
 def thomas(p):
@@ -24,7 +24,7 @@ def thomas(p):
     return 1+ 2.5*p + 10.05*p**2 + A*np.exp(B*p) 
 
 def plot_errorbar(x,y,err,col_mean='r',col_err='g', label_=""):
-    plt.errorbar(x, y,yerr=err,color=col_mean,ecolor=col_err, label = label_)
+    plt.errorbar(x, y,yerr=err,color=col_mean,ecolor=col_err, label = label_, fmt='.')
 
 def sort_data(x,y):
     lists = sorted(itertools.izip(*[x, y]))
@@ -39,26 +39,31 @@ phi_val = []
 
 for file in nu_files_yd1:
     try:
-	df = pd.read_csv(file)
-	nu_mean.append(np.mean(df[df.columns[4]]))
-	nu_var.append(np.mean(df[df.columns[5]]))
-	phi_val.append(float(file.split('/')[1].split('_')[1].split('i')[1])/100.0)
+        df = pd.read_csv(file)
+        nu_mean.append(np.mean(df[df.columns[4]][-100:]))
+        nu_var.append(np.var(df[df.columns[4]][-100:]))
+        #nu_var.append(np.mean(df[df.columns[5]][-20:]))
+        phi_val.append(float(file.split('/')[1].split('_')[1].split('i')[1])/100.0)
     except:
-	continue
+        continue
 
 print nu_mean
 print phi_val
-phi = np.asarray([.4, .45, .5,.54, .55, .56])
+phi = np.asarray([.4, .45, .5, .54, .55, .56])
 sim_data_mean_var = nu_var
 
 plt.figure()
 data = np.asarray(sort_data(phi,kd(phi)))
 
-plt.plot(data[0], data[1], label = "kd")
-plot_errorbar(phi_val, nu_mean, sim_data_mean_var,col_mean='k',col_err='g', label_="sim_data")
+mpl.rcParams.update({'font.size': 16})
+plt.plot(data[0], data[1], label = "KD prediction")
+plot_errorbar(phi_val, nu_mean, sim_data_mean_var,col_mean='k',col_err='g',label_="simulation")
 
 plt.xlabel("volume fraction of solids")
 plt.ylabel("relative viscosity")
-plt.xlim([0,0.6])
+plt.xlim([0.35,0.6])
+#plt.yscale("log")
 plt.legend(loc='upper left')
+plt.yscale("log")
+#plt.yscale("log")
 plt.savefig('comparison_kd')

@@ -22,11 +22,11 @@ config_state_partinit_lattice_random	1.0
 config_state_partinit_lattice_dmin	0.05
 config_state_partinit_type	lattice
 config_state_type	generated
-config_experiment_tmaxLU	801601
+config_experiment_tmaxLU	4008020
 config_experiment_temperature	300.0
 config_experiment_shearrate_type	constant
 config_experiment_shearrate_constant_yd	15.0
-config_experiment_tmax	0.133333333333
+config_experiment_tmax	0.667
 config_experiment_measurement_type	constant
 config_experiment_measurement_constant_tmeasLU	4008
 config_experiment_measurement_constant_tmeas	0.000666666666667

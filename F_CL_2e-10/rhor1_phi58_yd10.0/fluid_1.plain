@@ -1,7 +1,0 @@
-config_visctemp_type	constant
-config_electrolyte_type	none
-config_viscshear_type	constant
-config_viscshear_constant_nu	1.002e-06
-config_depletants_type	none
-config_density_type	constant
-config_density_constant_rho	1000.0

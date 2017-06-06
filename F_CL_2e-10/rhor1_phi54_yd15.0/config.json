@@ -17,8 +17,8 @@
             "type": "constant"
         },
         "temperature": 300.0,
-        "tmax": 0.13333333333333333,
-        "tmaxLU": 801601,
+        "tmax": 0.667,
+        "tmaxLU": 4008020,
         "type": "suspshear"
     },
     "material": {
