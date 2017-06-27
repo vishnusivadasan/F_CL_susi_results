@@ -26,7 +26,7 @@ config_experiment_tmaxLU	858860
 config_experiment_temperature	300.0
 config_experiment_shearrate_type	constant
 config_experiment_shearrate_constant_yd	70.0
-config_experiment_tmax	0.0285714285714
+config_experiment_tmax	0.142857142857
 config_experiment_measurement_type	constant
 config_experiment_measurement_constant_tmeasLU	859
 config_experiment_measurement_constant_tmeas	0.000142857142857
