@@ -5,8 +5,8 @@
         },
         "measurement": {
             "constant": {
-                "tmeas": 0.25,
-                "tmeasLU": 1503000
+                "tmeas": 0.01,
+                "tmeasLU": 60100
             },
             "type": "constant"
         },
@@ -17,8 +17,8 @@
             "type": "constant"
         },
         "temperature": 300.0,
-        "tmax": 1.0,
-        "tmaxLU": 6012001,
+        "tmax": 10.0,
+        "tmaxLU": 60120010,
         "type": "suspshear"
     },
     "material": {

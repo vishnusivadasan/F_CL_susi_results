@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import os
+import sys  
 import itertools
 import numpy as np
 import pandas as pd
@@ -11,11 +12,14 @@ from matplotlib.legend_handler import HandlerLine2D
 
 ############################plotting the comparison with kd and other estimates
 
+phim = float(sys.argv[1])
+
+
 def einstein(p):
     return 1+ 2.5*p + 7.17*p**2 + 16.2*p**3
 
-def kd(p):
-    return (1-(p/0.63))**(-(2.5*0.63))
+def kd(p, phim=0.63):
+    return (1-(p/phim))**(-(2.5*phim))
 def guth_simha(p):
     return 1+ 2.5*p + 14.1*p**2 
 def thomas(p):
@@ -24,6 +28,7 @@ def thomas(p):
     return 1+ 2.5*p + 10.05*p**2 + A*np.exp(B*p) 
 
 def plot_errorbar(x,y,err,col_mean='r',col_err='g', label_=""):
+    print len(x), len(y)
     plt.errorbar(x, y,yerr=err,color=col_mean,ecolor=col_err, label = label_, fmt='.')
 
 def sort_data(x,y):
@@ -31,8 +36,13 @@ def sort_data(x,y):
     new_x, new_y = list(itertools.izip(*lists))
     return new_x, new_y
 #----------------------------------------------------------------------------------
-proc = subprocess.Popen('find . -maxdepth 4 -type f -iname "nu_t.dat" | grep "_yd1.0/"',shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-nu_files_yd1 = proc.communicate()[0].split()
+#proc = subprocess.Popen('find . -maxdepth 4 -type f -iname "nu_t.dat" | grep "_yd1.0/"',shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#nu_files_yd1 = proc.communicate()[0].split()
+nu_path= "/result/nu_t.dat"
+nu_files_yd1 = []
+for phi in [40,45,50,54,55,56]:
+    nu_files_yd1.append("rhor1_phi"+str(phi)+"_yd1.0/result/nu_t.dat")
+print nu_files_yd1
 nu_mean = []
 nu_var = []
 phi_val = []
@@ -40,23 +50,25 @@ phi_val = []
 for file in nu_files_yd1:
     try:
         df = pd.read_csv(file)
-        nu_mean.append(np.mean(df[df.columns[4]][-100:]))
-        nu_var.append(np.var(df[df.columns[4]][-100:]))
+        nu_mean.append(np.mean(df[df.columns[4]][:]))
+        nu_var.append(np.std(df[df.columns[4]][:]))
         #nu_var.append(np.mean(df[df.columns[5]][-20:]))
-        phi_val.append(float(file.split('/')[1].split('_')[1].split('i')[1])/100.0)
+        phi_val.append(float(file.split('/')[0].split('_')[1].split('i')[1])/100.0)
     except:
         continue
 
 print nu_mean
+print nu_var
 print phi_val
 phi = np.asarray([.4, .45, .5, .54, .55, .56])
 sim_data_mean_var = nu_var
 
 plt.figure()
-data = np.asarray(sort_data(phi,kd(phi)))
+phi_kd = np.linspace(0.4,0.56,100)
+data = np.asarray(sort_data(phi_kd,kd(phi_kd,phim)))
 
 mpl.rcParams.update({'font.size': 16})
-plt.plot(data[0], data[1], label = "KD prediction")
+plt.plot(data[0], data[1], label = "KD prediction \n$\phi_m=$"+str(phim))
 plot_errorbar(phi_val, nu_mean, sim_data_mean_var,col_mean='k',col_err='g',label_="simulation")
 
 plt.xlabel("volume fraction of solids")
@@ -64,6 +76,6 @@ plt.ylabel("relative viscosity")
 plt.xlim([0.35,0.6])
 #plt.yscale("log")
 plt.legend(loc='upper left')
-plt.yscale("log")
 #plt.yscale("log")
-plt.savefig('comparison_kd')
+#plt.yscale("log")
+plt.savefig('comparison_kd_'+str(phim).replace('.','_'))
