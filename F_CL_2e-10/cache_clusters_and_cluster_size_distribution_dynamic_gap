@@ -1,0 +1,58 @@
+#!/home/vsivadas/anaconda/bin/python 
+
+import susipop as sp
+import os
+import sys
+import numpy as np
+import pandas as pd
+import subprocess
+from susipop import filter
+from susipop import reader
+from susipop.susi.cache import SusiCache as cache
+
+phi = int(sys.argv[1])
+shearrate = float(sys.argv[2])
+
+path = "rhor1_phi"+str(phi)+"_yd"+str(float(shearrate))
+dataset = sp.reader.DataSet(path,particles=True, fluid=False)
+
+cache_file = cache(cachefile=dataset.cachefile)
+tmax = len(dataset.tlist[1:])
+viscosity_file = pd.read_csv(path+"/result/nu_t.dat")
+viscosity_non_relative = np.array(viscosity_file[viscosity_file.columns[2]])
+shear_stress = np.asarray([i*shearrate for i in viscosity_non_relative])
+
+
+#print len(shear_stress), tmax
+
+
+a = 0.00868924612 
+b = -0.106230138681
+c = -0.198477972798 
+d = -7.21380690351
+
+def predict_gap(shear_stress):
+    if shear_stress > 0.14:
+        j = shear_stress
+        log_gap = a*np.log10(j)**4 +b*np.log10(j)**2 +c*np.log10(j) + d
+        return 10**(log_gap)
+    else:
+        return 1e-10
+
+for i,t in enumerate(dataset.tlist[1:tmax]):
+    print str(float(i)/len(dataset.tlist[1:tmax])*100)
+    #print "shear stress =", shear_stress
+    gap = predict_gap(shear_stress[i])
+    try:
+        #if not cache_file.has_data(t,"cluster_size_distribution_dynamic_gap"):
+        if True:
+            print "saving cluster_size_distribution data to t=",t
+            dataset.load_state(t)
+            s, ns = dataset.get_quantity("cluster_size_distribution", gap = gap, update=True)
+            print s
+            cache_file.save_data(t,{"cluster_size_distribution_dynamic_gap":[s, ns]})
+        else:
+            print "cluster_size_distribution data found at t=",t
+    except Exception as e:
+        print e
+        continue 

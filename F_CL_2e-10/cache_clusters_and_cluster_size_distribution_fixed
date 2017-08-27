@@ -1,0 +1,66 @@
+#!/home/vsivadas/anaconda/bin/python 
+#-----------------------------------------------------------------------------------------------
+# this code accepts the source folder for analyzing the single particle percent in the experiment 
+# contained in the folder and caches the results into a cachefile, to be read later. 
+# The input format is "./cache_cluster_analysis_SingleParticlePercent_fixed path_without_'/' gap_size_used init_init_time final_time"
+#-----------------------------------------------------------------------------------------------
+
+
+import susipop as sp
+import os
+import sys
+import numpy as np
+import pandas as pd
+import subprocess
+from susipop import filter
+from susipop import reader
+from susipop.susi.cache import SusiCache as cache
+import json
+
+def LoadJSON(filename):
+    file = open(filename)
+    string = file.read()
+    file.close()
+    return json.loads(string) 
+
+def get_phi_yd_nuf(path_add):
+    config = LoadJSON(path_add+'/config.json')
+    fluid = LoadJSON(path_add+'/fluid_1.json')
+    shearrate = config["experiment"]["shearrate"]["constant"]["yd"]
+    phi=config["material"]["particles"]["0"]["phi"]
+    nu_fluid = fluid["viscshear"]["constant"]["nu"]*1000
+    return phi,shearrate,nu_fluid 
+
+path = str(sys.argv[1])
+phi,shearrate,nu_fluid = get_phi_yd_nuf(path)
+
+gap =  float(sys.argv[2])
+
+path = "rhor1_phi"+str(phi)+"_yd"+str(float(shearrate))
+dataset = sp.reader.DataSet(path,particles=True, fluid=True)
+
+cache_file = cache(cachefile=dataset.cachefile)
+tmax = len(dataset.tlist[1:])
+
+for i,t in enumerate(dataset.tlist[1:tmax]):
+    print str(float(i)/len(dataset.tlist[1:tmax])*100)
+    try:
+        if not cache_file.has_data(t,"cluster_size_distribution_gap_"+str(gap)):
+            print "saving cluster_size_distribution data to t=",t
+            dataset.load_state(t)
+            s, ns = dataset.get_quantity("cluster_size_distribution", gap = gap, update=True)
+            cache_file.save_data(t,{"cluster_size_distribution_gap_"+str(gap):[s, ns]})
+        else:
+            print "cluster_size_distribution data found at t=",t
+        if not cache_file.has_data(t,"clusters_gap_"+str(gap)):
+            print "saving clusters data to t=",t, "gap =",gap
+            dataset.load_state(t)
+            clusters = dataset.get_quantity("clusters", gap = gap, update=True)
+            cache_file.save_data(t,{"clusters_gap_"+str(gap):clusters})
+        else:
+            print "clusters data found at t=",t, "gap =",gap
+
+        
+    except Exception as e:
+        print e
+        continue 
