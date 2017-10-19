@@ -1,0 +1,78 @@
+#!/usr/bin/python
+import os
+import numpy as np
+import pandas as pd
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+from itertools import cycle
+def get_time_nu(path):
+    db = pd.read_csv(path)
+    nu = db[db.columns[2]][:].values
+    t =  db[db.columns[1]][:].values
+    return t,nu 
+phi=56
+ydvals_plot = [10.0,12.0, 50.0 ]
+ydvals = [float(i) for i in np.arange(1,301,0.5)]
+
+subplots = True
+
+if subplots:
+    plt.figure(figsize = [10,5],dpi=300)
+else:
+    plt.figure(figsize = [5,5],dpi=300)
+if subplots: plt.subplot(122)
+sigma_vals = []
+yd_vals = []
+nu_vals = []
+
+c = ["g","y","r"]
+cy = cycle(c)
+for i,yd in enumerate(ydvals):
+    path = "rhor1_phi{}_yd{}".format(phi,yd)+"/result/nu_t.dat"
+    if os.path.exists(path) and yd in ydvals_plot:
+        t,nu = get_time_nu(path)
+        plt.plot(t*yd, nu, cy.next(),label="$\dot{\gamma}$="+str(yd)+"/s",linewidth=2)
+        #plt.plot(t*yd, nu*yd, label=" $ \dot{\gamma} $= "+str(yd)+"/s",linewidth=2)
+    if os.path.exists(path) :
+        t,nu = get_time_nu(path)
+        sigma_vals.append(np.mean(nu*yd))
+        yd_vals.append(yd)
+        nu_vals.append(np.mean(nu))
+ylim = [0.01, 30]
+plt.xlim([1,6.5])
+plt.ylim(ylim)
+plt.legend(loc="best",ncol=1,labelspacing=0.3, frameon=False)
+plt.xlabel("strain $\gamma$")
+if not subplots: 
+    #plt.ylabel("shear stress $\sigma$ (Pa)")
+    plt.ylabel("viscosity $\eta$ (Pa.s)")
+plt.yscale("log")
+
+if subplots:
+    plt.subplot(121)
+    #plt.plot(yd_vals, sigma_vals,"--",linewidth=2,label="$\phi=0.56$")
+    #plt.plot(yd_vals, sigma_vals,"ro",linewidth=2)
+    plt.plot(yd_vals, nu_vals,"--",linewidth=2,label="$\phi=0.56$")
+    _paths = ["rhor1_phi{}_yd{}".format(phi,i)+"/result/nu_t.dat" for i in ydvals_plot]
+    nu_ydvals_plot = [np.mean(get_time_nu(i)[1]) for i in _paths]
+
+    for i,yd in enumerate(ydvals_plot):
+        plt.plot(ydvals_plot[i], nu_ydvals_plot[i],"{}o".format(c[i]),label="$\dot{\gamma}$="+str(yd)+"/s",linewidth=2)
+        path = "rhor1_phi{}_yd{}".format(phi,yd)+"/result/nu_t.dat"
+        _, nu = get_time_nu(path)
+        sigma_mean = np.mean(nu*yd)
+        nu_mean = np.mean(nu)
+        #plt.axhline(sigma_mean)
+        plt.axhline(nu_mean,color=c[i])
+
+    plt.legend(loc="upper left", frameon=False)
+    plt.yscale("log")
+    plt.xscale("log")
+    plt.ylim(ylim)
+    plt.xlabel("shear rate $\dot{\gamma}$ (1/s)")
+    plt.ylabel("viscosity $\eta$ (Pa.s)")
+    #plt.ylabel("shear stress $\sigma$ (Pa)")
+    plt.savefig("viscosity_timeserieses_2by1")
+else:
+    plt.savefig("viscosity_timeserieses")
