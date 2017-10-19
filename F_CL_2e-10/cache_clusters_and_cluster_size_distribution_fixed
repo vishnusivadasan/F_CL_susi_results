@@ -34,10 +34,11 @@ def get_phi_yd_nuf(path_add):
 path = str(sys.argv[1])
 phi,shearrate,nu_fluid = get_phi_yd_nuf(path)
 
+phi = int(phi*100) 
 gap =  float(sys.argv[2])
 
 path = "rhor1_phi"+str(phi)+"_yd"+str(float(shearrate))
-dataset = sp.reader.DataSet(path,particles=True, fluid=True)
+dataset = sp.reader.DataSet(path,particles=True, fluid=False)
 
 cache_file = cache(cachefile=dataset.cachefile)
 tmax = len(dataset.tlist[1:])

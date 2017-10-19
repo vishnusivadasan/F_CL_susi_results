@@ -13,7 +13,7 @@
     },
     "viscshear": {
         "constant": {
-            "nu": 1.002e-06
+            "nu": 1.0020000000000001e-06
         },
         "type": "constant"
     },
