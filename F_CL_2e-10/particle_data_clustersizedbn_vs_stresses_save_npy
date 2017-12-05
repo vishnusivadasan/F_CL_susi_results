@@ -1,0 +1,115 @@
+#!/usr/bin/python
+import itertools
+import os
+from susipop import filter
+from susipop import reader
+import numpy as np
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+import sys 
+import pandas as pd
+import heatmap
+from tqdm import tqdm
+phivals = [float(i)/100.0 for i in sys.argv[1:]]
+
+#exporting all data regarding average rep, fric, lub, tot stresses to an npy file 
+
+###################
+#default_value of dfric=6.41742430504e-08
+dfric = 6.41742430504e-08
+#################
+
+def get_data(f,col,t):
+    return f[f.columns[col]][t].values[0]
+
+
+ydvals = [float(i) for i in np.arange(0,10000,0.5)]
+paths_temp = ["rhor1_phi{}_yd{}".format(int(i*100),j) for i in phivals for j in ydvals ]
+
+folders = []
+for i in paths_temp:
+    if os.path.exists(i+"/result/nu_t.dat"):
+        folders.append(i)
+#print folders
+
+# data saved in the order of shear, rep, fric, lub, tot, hd stresses
+db = dict()
+for phi in phivals:
+    db[phi] = {'npart':0,'radius':[],'pos':[], 'viscosity':[],'shearrate':[],'shear':[],'rep':[],'fric':[],'lub':[],'tot':[],'hd':[],'frac_fric':[], 'cluster_s':[],'cluster_ns':[],'cluster_s_ns':[],'largest_clustersize':[],'avg_clustersize':[]}
+    for ia in ['rep', 'tot', 'fric_kin', 'lub', 'fric_stat', 'fric', 'hd']:
+        db[phi][ia+"_raw"] = []
+
+folders_list = tqdm(folders)
+for folder in folders_list:
+  folders_list.set_description("Processing %s" % folder)
+  try:
+    exp = reader.DataSet(folder, fluid=False, particles=True)
+    phi = round(exp.phi,2)
+    #print exp_phi, phivals
+    #print "truthval", (exp_phi in phivals and len(exp.tlist) > 1)
+    viscosity_file = pd.read_csv(folder+"/result/nu_t.dat")
+    tot_file    = pd.read_csv(folder+"/result/part_stress_tot_t.dat")
+    rep_file    = pd.read_csv(folder+"/result/part_stress_rep_t.dat")
+    fric_file   = pd.read_csv(folder+"/result/part_stress_fric_t.dat")
+    lub_file    = pd.read_csv(folder+"/result/part_stress_lub_t.dat")
+    hd_file     = pd.read_csv(folder+"/result/part_stress_hd_t.dat")
+    time = viscosity_file[viscosity_file.columns[0]]
+    if (phi in phivals) & (len(exp.tlist) > 1):
+        #print folder
+        step = 5
+        tlist = tqdm(exp.tlist[100::step])
+        for t in tlist:
+            try:
+                tlist.set_description("Time = {}s, every {} steps".format(t,step))
+                exp.load_state(t)
+                db[phi]['npart']  = exp.npart
+                db[phi]['radius'] = exp.particles.radius
+                t_ = np.where(time == t)[0]
+                #viscosity = viscosity_file[viscosity_file.columns[2]][t_]
+                pos             = exp.particles.r
+                viscosity       = get_data(viscosity_file,2,t_) 
+                shear_stress    = exp.shearrate*viscosity
+                tot_stress      = get_data(tot_file,2,t_) 
+                rep_stress      = get_data(rep_file,2,t_) 
+                fric_stress     = get_data(fric_file,2,t_) 
+                lub_stress      = get_data(lub_file,2,t_) 
+                hd_stress       = get_data(hd_file,2,t_) 
+                shearrate       = shear_stress/viscosity 
+                s,ns            = exp.get_quantity("cluster_size_distribution",gap=dfric, update=True)
+                s_largest       = max(s)
+                s_avg           = np.sum(s*ns)/float(np.sum(ns))
+                _temp           = np.zeros(exp.npart)
+                _temp[s]        = ns
+                s_ns            = _temp
+
+                #number of particles in friction
+                num_part_fric = len(np.where(np.asarray([np.linalg.norm(j) for j in exp.particles.sshear_fric])!= 0)[0]) 
+                percent_part_fric = float(num_part_fric)/float(exp.npart)
+                db[phi]['pos'].append(pos)
+                db[phi]['shear'].append(shear_stress)
+                db[phi]['shearrate'].append(np.round(shearrate,2))
+                db[phi]['viscosity'].append(viscosity)
+                db[phi]['rep'].append(rep_stress)
+                db[phi]['fric'].append(fric_stress)
+                db[phi]['lub'].append(lub_stress)
+                db[phi]['tot'].append(tot_stress)
+                db[phi]['hd'].append(hd_stress)
+                for ia in ['rep', 'tot', 'fric_kin', 'lub', 'fric_stat', 'fric', 'hd']:
+                    db[phi][ia+"_raw"].append(np.array(exp.particles.quant["S"]["shear"][ia].T[1]))
+                db[phi]['frac_fric'].append(percent_part_fric)
+                db[phi]['cluster_s'].append(s)
+                db[phi]['cluster_ns'].append(ns)
+                db[phi]['cluster_s_ns'].append(s_ns)
+                db[phi]['largest_clustersize'].append(s_largest)
+                db[phi]['avg_clustersize'].append(s_avg)
+            except Exception as e:
+                print e
+                continue
+
+            
+        #print db[phi] 
+  except Exception as e: print str(e);continue
+  np.save('particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
+  folders_list.set_description("Saved data for {}".format(folder))
+print "\n"

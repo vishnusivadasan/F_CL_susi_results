@@ -1,0 +1,73 @@
+#!/usr/bin/python
+import itertools
+import os
+from susipop import filter
+from susipop import reader
+import numpy as np
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+import sys 
+import pandas as pd
+import heatmap
+from tqdm import tqdm
+phivals = [float(i)/100.0 for i in sys.argv[1:]]
+
+#exporting all data regarding average rep, fric, lub, tot stresses to an npy file 
+
+def get_folder_list():
+    f = next(os.walk('.'))[1]
+    return f
+def get_data(f,col,t):
+    return f[f.columns[col]][t].values[0]
+
+folders = get_folder_list()
+
+db = dict()
+# data saved in the order of shear, rep, fric, lub, tot, hd stresses
+for phi in phivals:
+    db[phi] = {'viscosity':[],'shear':[],'rep':[],'fric':[],'lub':[],'tot':[],'hd':[],'frac_fric':[]}
+ 
+for folder in tqdm(folders):
+  try:
+    exp = reader.DataSet(folder, fluid=False, particles=True)
+    phi = round(exp.phi,2)
+    #print exp_phi, phivals
+    #print "truthval", (exp_phi in phivals and len(exp.tlist) > 1)
+    viscosity_file = pd.read_csv(folder+"/result/nu_t.dat")
+    tot_file    = pd.read_csv(folder+"/result/part_stress_tot_t.dat")
+    rep_file    = pd.read_csv(folder+"/result/part_stress_rep_t.dat")
+    fric_file   = pd.read_csv(folder+"/result/part_stress_fric_t.dat")
+    lub_file    = pd.read_csv(folder+"/result/part_stress_lub_t.dat")
+    hd_file     = pd.read_csv(folder+"/result/part_stress_hd_t.dat")
+    time = viscosity_file[viscosity_file.columns[0]]
+    if (phi in phivals) & (len(exp.tlist) > 1):
+        print folder
+        for t in tqdm(exp.tlist[100::1]):
+            exp.load_state(t)
+            t_ = np.where(time == t)[0]
+            #viscosity = viscosity_file[viscosity_file.columns[2]][t_]
+            viscosity       = get_data(viscosity_file,2,t_) 
+            shear_stress    = exp.shearrate*viscosity
+            tot_stress      = get_data(tot_file,2,t_) 
+            rep_stress      = get_data(rep_file,2,t_) 
+            fric_stress     = get_data(fric_file,2,t_) 
+            lub_stress      = get_data(lub_file,2,t_) 
+            hd_stress       = get_data(hd_file,2,t_) 
+            
+            #number of particles in friction
+            num_part_fric = len(np.where(np.asarray([np.linalg.norm(j) for j in exp.particles.sshear_fric])!= 0)[0]) 
+            percent_part_fric = float(num_part_fric)/float(exp.npart)
+            db[phi]['shear'].append(shear_stress)
+            db[phi]['viscosity'].append(viscosity)
+            db[phi]['rep'].append(rep_stress)
+            db[phi]['fric'].append(fric_stress)
+            db[phi]['lub'].append(lub_stress)
+            db[phi]['tot'].append(tot_stress)
+            db[phi]['hd'].append(hd_stress)
+            db[phi]['frac_fric'].append(percent_part_fric)
+
+
+        #print db[phi] 
+  except Exception as e: print str(e);continue
+np.save('stress_vs_fraction_in_friction.npy',db)
