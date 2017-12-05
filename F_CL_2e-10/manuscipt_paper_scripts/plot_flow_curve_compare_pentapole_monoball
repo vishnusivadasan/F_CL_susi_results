@@ -1,0 +1,39 @@
+#!/usr/bin/python
+import os
+import numpy as np
+import pandas as pd
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+
+def get_nu_mean_std(path):
+    db = pd.read_csv(path)
+    nu = db[db.columns[4]][:].values
+    return np.mean(nu), np.std(nu)
+
+phivals = [45,50]
+ydvals = [float(i) for i in range(10000)]
+#print paths
+plt.figure(dpi=300)
+def plot_folder(path_add,label_add):
+    for phi in phivals:
+        yd_list,nu_mean_list, nu_std_list = [],[],[]
+        for yd in ydvals:
+            path = path_add+"rhor1_phi{}_yd{}".format(phi,yd)+"/result/nu_t.dat"
+            if os.path.exists(path):
+                #print path
+                nu_mean,nu_std = get_nu_mean_std(path)
+                yd_list.append(yd)
+                nu_mean_list.append(nu_mean)
+                nu_std_list.append(nu_std)
+        plt.errorbar(yd_list, nu_mean_list, yerr=nu_std_list, label=label_add+"$\phi=${}".format(phi/100.0),fmt="o-",elinewidth=0.5,capthick=0.5,capsize=5,linewidth=3,)
+
+plot_folder("","non-spherical ")
+plot_folder("../../","spherical ")
+
+plt.legend(loc="best")
+plt.xlabel("shear rate $\dot{\gamma}$ (1/s)")
+plt.ylabel("relative viscosity $\eta_{r}$")
+plt.xscale("log")
+plt.yscale("log")
+plt.savefig("compare_pentapole_monoball_flowcurve_yd_vs_nu_rel_errrorbars")
