@@ -36,7 +36,7 @@ for i in paths_temp:
 # data saved in the order of shear, rep, fric, lub, tot, hd stresses
 db = dict()
 for phi in phivals:
-    db[phi] = {'npart':0,'radius':[],'pos':[], 'viscosity':[],'shearrate':[],'shear':[],'rep':[],'fric':[],'lub':[],'tot':[],'hd':[],'frac_fric':[], 'cluster_s':[],'cluster_ns':[],'cluster_s_ns':[],'largest_clustersize':[],'avg_clustersize':[]}
+    db[phi] = {'strain':[],'npart':0,'radius':[],'pos':[], 'viscosity':[],'shearrate':[],'shear':[],'rep':[],'fric':[],'lub':[],'tot':[],'hd':[],'frac_fric':[], 'cluster_s':[],'cluster_ns':[],'cluster_s_ns':[],'largest_clustersize':[],'avg_clustersize':[]}
     for ia in ['rep', 'tot', 'fric_kin', 'lub', 'fric_stat', 'fric', 'hd']:
         db[phi][ia+"_raw"] = []
 
@@ -57,7 +57,7 @@ for folder in folders_list:
     time = viscosity_file[viscosity_file.columns[0]]
     if (phi in phivals) & (len(exp.tlist) > 1):
         #print folder
-        step = 5
+        step = 50
         tlist = tqdm(exp.tlist[100::step])
         for t in tlist:
             try:
@@ -68,6 +68,7 @@ for folder in folders_list:
                 t_ = np.where(time == t)[0]
                 #viscosity = viscosity_file[viscosity_file.columns[2]][t_]
                 pos             = exp.particles.r
+                strain          = t*exp.dt*exp.shearrate 
                 viscosity       = get_data(viscosity_file,2,t_) 
                 shear_stress    = exp.shearrate*viscosity
                 tot_stress      = get_data(tot_file,2,t_) 
@@ -86,6 +87,7 @@ for folder in folders_list:
                 #number of particles in friction
                 num_part_fric = len(np.where(np.asarray([np.linalg.norm(j) for j in exp.particles.sshear_fric])!= 0)[0]) 
                 percent_part_fric = float(num_part_fric)/float(exp.npart)
+                db[phi]['strain'].append(strain)
                 db[phi]['pos'].append(pos)
                 db[phi]['shear'].append(shear_stress)
                 db[phi]['shearrate'].append(np.round(shearrate,2))
@@ -110,6 +112,6 @@ for folder in folders_list:
             
         #print db[phi] 
   except Exception as e: print str(e);continue
-  np.save('particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
+  np.save('test_particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
   folders_list.set_description("Saved data for {}".format(folder))
 print "\n"
