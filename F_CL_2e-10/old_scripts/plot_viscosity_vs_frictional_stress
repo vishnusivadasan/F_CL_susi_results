@@ -1,0 +1,125 @@
+#!/usr/bin/python
+import os
+import numpy as np
+import pandas as pd
+import subprocess
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.legend_handler import HandlerLine2D
+import sys
+from susipop import reader
+import susipop as sp
+
+from tqdm import tqdm
+
+from pathos.multiprocessing import ProcessingPool as Pool
+
+
+# get all valid paths
+phivals = [i for i in sys.argv[1:]] 
+ydvals = np.arange(0,10001,1)
+paths_temp = ["rhor1_phi{0}_yd{1}".format(j,float(i)) for i in ydvals for j in phivals]
+
+paths = []
+for path in paths_temp:
+    if os.path.exists(path):
+        paths.append(path)
+#print paths
+
+# function to get the viscosity from a path
+def get_viscosity(path ,nsteps, input_type="viscosity"):
+    path = path+"/result/nu_t.dat"
+    f = pd.read_csv(path)
+    time = f[f.columns[0]][-nsteps:].values
+    if input_type == "viscosity":
+        viscosity = f[f.columns[2]][-nsteps:].values
+    elif input_type == "rel.viscosity":
+        viscosity = f[f.columns[4]][-nsteps:].values
+    else:
+        print "enter viscosity or rel.viscosity"
+    return time, viscosity        
+
+def get_frictional_stress(path,timeseries,nsteps = 100):
+    dataset = reader.DataSet(path,fluid = False,particles = True)
+    frictional_stress = np.zeros_like(timeseries).astype("float")
+    time = []
+    for i,t in enumerate(tqdm(timeseries)):
+        try:
+            dataset.load_state(t)
+            frictional_stress[i] = np.mean(map(np.linalg.norm, dataset.particles.sshear_fric))
+            time.append(t)
+        except Exception as e:
+            print e
+            continue
+    return np.asanyarray(time),frictional_stress
+
+
+def get_phi_yd(path):
+    dataset = reader.DataSet(path,fluid = False,particles = True)
+    dataset.load_state(dataset.tlist[1])
+    return round(dataset.phi,2), dataset.shearrate
+    
+
+from multiprocessing import Pool,Manager
+from functools import partial
+
+plt.figure()
+nsteps = -100
+
+db = {}
+for phi in phivals:
+    db[float(phi)/100.0] = [[],[]]
+
+def add_data_to_db(path):
+    try:
+        print path
+        phi,yd = get_phi_yd(path)
+        time_visc, viscosity = get_viscosity(path,nsteps)
+        time_fric, f_series = get_frictional_stress(path,time_visc,nsteps)
+        #time_fric_valid = np.intersect1d(time_visc, time_fric)
+        #idx_time_visc_valid = np.where(time_visc==time_fric_valid)[0]
+        #idx_time_fric_valid = np.where(time_fric==time_fric_valid)[0]
+        #print time_visc[idx_time_visc_valid]
+        #viscosity = viscosity[idx_time_visc_valid] 
+        #f_series = f_series[idx_time_fric_valid]
+        print len(f_series),len(viscosity)
+        return [phi,f_series,viscosity]
+    except:
+        return [phi,[0],[0]]
+
+try:
+    pool = Pool(processes=16)
+    results = pool.map(add_data_to_db , paths)
+finally:
+    pool.close()
+    pool.join()
+
+for i in tqdm(results):
+    try:
+        phi = i[0]
+        fric_stress = i[1]
+        viscosity = i[2]
+        db[phi][0] = np.concatenate((db[phi][0],fric_stress))
+        db[phi][1] = np.concatenate((db[phi][1],viscosity))
+    except Exception as e:
+        print e
+        continue
+    
+
+
+for phi in db.keys():
+    print phi, len(db[phi][0]), len(db[phi][1])
+    plt.plot(db[phi][0],db[phi][1],'.',label= str(phi))
+plt.xlabel("$\sigma_{fric}$")
+plt.ylabel("viscosity")
+plt.yscale("log")
+plt.xscale("log")
+plt.legend(loc = "best")
+plt.savefig("viscosity_vs_frictional_stress")    
+    
+np.save('frictional_stress_vs_viscosity.npy',db)
+
+
+
+

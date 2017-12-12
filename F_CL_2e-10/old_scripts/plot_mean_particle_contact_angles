@@ -1,0 +1,97 @@
+#!/usr/bin/python
+import susipop as sp
+import numpy as np
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+from scipy import spatial
+import sys
+import os 
+import json
+import susipop as sp
+
+#phivals = [float(i)/100.0 for i in sys.argv[1:]]
+def get_folder_list():
+    f = next(os.walk('.'))[1]
+    return f
+
+def get_phi_yd(path):
+    if os.path.exists(path):
+        exp = sp.reader.DataSet(path)
+        exp.load_state(exp.tlist[1])
+        return int(round(exp.phi,2)*100), round(exp.shearrate,2)
+    else:
+        return 0,0
+
+def angle_between(p1, p2):
+   p = np.array(p1) - np.array(p2)
+   p_ = p/np.linalg.norm(p)
+   #return np.rad2deg(np.arccos(p_[0]))%180.0
+   return np.arccos(p_[0])
+
+def plot_hist(data,bins,normed=True):
+    hist, bins_ = np.histogram(data,bins=bins,normed=normed)
+    bins = 0.5*(bins_[:-1]+bins_[1:])
+    #plt.axes(polar = True)
+    plt.plot(bins,hist)
+
+
+phival = sys.argv[1] 
+paths_list = []
+for ydval in np.arange(0,10000.0,0.5):
+    path = "rhor1_phi{}_yd{}".format(phival,ydval)
+    if os.path.exists(path):
+        paths_list.append(path)
+N = len(paths_list)
+ncols = 3
+nrows = N//ncols + 2
+plt.figure(figsize=[ncols*7,nrows*7],dpi=150)
+
+for ii, path in enumerate(paths_list):
+    try:
+        ydval = float(path.split("_")[2].split("yd")[1])
+        if os.path.exists(path):
+            print path
+            particle_pairs = []
+            particle_pairs_pos = []
+            particle_pairs_angle = []
+
+            exp = sp.reader.DataSet(path,particles=True,fluid=False)
+            steps = 5
+            for t in tqdm(exp.tlist[100::steps]):
+                exp.load_state(t)
+                r = exp.particles.r
+                tree = spatial.KDTree(zip(r.T[0],r.T[1],r.T[2]))
+                particle_pairs = []
+                for idx_i in range(exp.npart):
+                    dist, idx_j =  tree.query(r[idx_i],k=2)
+                    #getting the nearest particle distance and index
+                    dist,idx_j = dist[1],idx_j[1]
+                    gap = dist - exp.particles.radius[idx_i] - exp.particles.radius[idx_j]
+                    if gap <=6.4e-8: # identifying particles beyond interaction radius
+                        gap = gap
+                        if [idx_j,idx_i] not in particle_pairs: 
+                            particle_pairs.append([idx_i, idx_j])
+                            pos_i, pos_j = exp.particles.r[idx_i],exp.particles.r[idx_j]
+                            particle_pairs_pos.append([pos_i, pos_j])
+                            particle_pairs_angle.append(angle_between(pos_i,pos_j))
+                     
+            #ndata = len(exp.tlist[100::steps])
+            print "plotting the data...phi={}, yd={}".format(phival,ydval)
+            plt.subplot(nrows,ncols,ii+1,polar=True)
+
+            plot_hist(particle_pairs_angle, bins=180,normed=True)
+            #plt.hist(particle_pairs_angle, bins=36,normed=True)
+
+            plt.xlabel("angle (degrees)")
+            plt.ylabel("normalized count (bars sum up to 1.0)")
+            plt.title("phi={}".format(phival)+" ,shearrate="+str(ydval)+"/s")
+            
+    except Exception as e:
+        print path
+        print e
+        continue
+plt.tight_layout()
+savename = "pair_angles/particle_pairs_angles"+str(phival)
+plt.savefig(savename)

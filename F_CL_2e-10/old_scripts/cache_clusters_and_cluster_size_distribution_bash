@@ -1,0 +1,7 @@
+parallel ./cache_clusters_and_cluster_size_distribution 54 {} 1e-8 ::: 1.0 10.0 100.0 11.0 11.0 11.5 12.0 12.5 13.0 14.0 15.0 16.0 18.0 20.0 30.0 50.0 70.0 300.0 1000.0 
+parallel ./cache_clusters_and_cluster_size_distribution 55 {} 1e-8 ::: 1.0 10.0 100.0 11.0 11.0 11.5 12.0 12.5 13.0 14.0 15.0 16.0 18.0 20.0 30.0 50.0 70.0 300.0 1000.0
+parallel ./cache_clusters_and_cluster_size_distribution 50 {} 1e-8 ::: 1.0 10.0 100.0 11.0 11.0 11.5 12.0 12.5 13.0 14.0 15.0 16.0 18.0 20.0 30.0 50.0 70.0 300.0 1000.0
+parallel ./cache_clusters_and_cluster_size_distribution 45 {} 1e-8 ::: 1.0 10.0 100.0 11.0 11.0 11.5 12.0 12.5 13.0 14.0 15.0 16.0 18.0 20.0 30.0 50.0 70.0 300.0 1000.0
+parallel ./cache_clusters_and_cluster_size_distribution 40 {} 1e-8 ::: 1.0 10.0 100.0 11.0 11.0 11.5 12.0 12.5 13.0 14.0 15.0 16.0 18.0 20.0 30.0 50.0 70.0 300.0 1000.0
+parallel ./cache_clusters_and_cluster_size_distribution 56 {} 1e-8 ::: 1.0 10.0 100.0 11.0 11.0 11.5 12.0 12.5 13.0 14.0 15.0 16.0 18.0 20.0 30.0 50.0 70.0 300.0 1000.0
+

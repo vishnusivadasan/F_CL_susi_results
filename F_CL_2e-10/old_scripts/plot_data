@@ -1,0 +1,85 @@
+#!/usr/bin/python 
+
+# # Declarations 
+
+# In[1]:
+
+#%matplotlib inline
+#get_ipython().magic(u'matplotlib notebook')
+
+import pandas as pd
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+import os 
+import numpy as np
+
+
+# # Functions 
+
+# In[2]:
+
+def get_folder_list():
+    f = next(os.walk('.'))[1]
+    return f
+def get_dat_files(path = '.'):
+    f = []
+    for (dirpath, dirnames, filenames) in os.walk(path):
+        f.extend(filenames)
+        break
+    idx = []
+    for i in range(len(f)): 
+        if f[i][-3:] != 'dat': idx.append(i)
+    f = np.array(f)
+    f = np.delete(f, idx)
+    return f
+
+def plot_errorbar(x,y,err,col_mean='r',col_err='g'):
+    plt.errorbar(x, y,yerr=err,color=col_mean,ecolor=col_err) 
+def plot_errorbar_fill(x,y,err,col_mean='r',col_err='g'):
+    plt.plot(x,y,col_mean)
+    plt.fill_between(x, y+err, y-err,color=col_err)
+def plot_all_files_in_dir(path0):
+    path = path0+"/result/"
+    files = get_dat_files(path)
+    files = list(files)
+    plt.figure(figsize=[23,23])
+    plt.suptitle(path,fontsize=16)
+    i = 1
+    for item in ['part_stress_norm_fric_t.dat','part_stress_norm_rep_t.dat','part_stress_norm_hd_t.dat',\
+                  'part_stress_norm_lub_t.dat','part_stress_norm_tot_t.dat']:
+        try:
+            files.remove(item)
+        except:
+            continue
+
+    for i,f in enumerate(files):
+        plt.subplot(4,2,i+1)
+        df = pd.read_csv(path+f,sep=',')
+        time = df[df.columns[1]]
+        shearrate = float(path0.split('yd')[-1])
+        strain = time*shearrate
+        #print shearrate
+        if f == 'nu_t.dat':
+            #plt.yscale('log')
+            plot_errorbar(strain,df[df.columns[4]],df[df.columns[5]])
+        else:
+            #plt.yscale('linear')
+            plot_errorbar(strain,df[df.columns[2]],df[df.columns[3]])
+        
+        plt.ylabel(f[:-3])
+        plt.xlabel('Strain')
+    path = path.replace(".","_")
+    plt.savefig(path[:-8]+"_plots")
+
+
+# # Analysis
+
+# In[3]:
+
+for path in get_folder_list():
+    try:	
+        if os.path.isfile(path+ "/result/nu_t.dat"):
+            print path+"/result/"
+            plot_all_files_in_dir(path)
+    except Exception,e: print str(e)

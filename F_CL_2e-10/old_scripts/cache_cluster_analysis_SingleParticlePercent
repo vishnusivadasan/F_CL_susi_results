@@ -1,0 +1,42 @@
+#!/home/vsivadas/anaconda/bin/python
+
+import susipop as sp
+import os
+import sys
+import numpy as np
+import pandas as pd
+import subprocess
+from susipop import filter
+from susipop import reader
+from susipop.susi.cache import SusiCache as cache
+
+#Arguements required 
+
+phi = str(sys.argv[1])
+shearrate = str(sys.argv[2])
+gap =  float(sys.argv[3])
+tmin = int(sys.argv[4])
+tmax = int(sys.argv[5])
+
+
+
+timerange = [tmin, tmax]
+path = "rhor1_phi"+str(phi)+"_yd"+str(float(shearrate))
+print path
+cachefilename = "./cache/" + "phi_"+str(phi)+"_shearrate_"+str(float(shearrate)).replace(".","_")+".h5"
+clustercache = cache(cachefile=cachefilename)
+dataset = sp.reader.DataSet(path,particles=True, fluid=True,cachefile=cachefilename)
+
+for i,time_idx in enumerate(range(timerange[0], timerange[1])):
+    try:
+        if not clustercache.has_data(dataset.tlist[time_idx],"single_particle_percent_gap_"+str(gap)):
+            dataset.load_state(dataset.tlist[time_idx])
+            spp = dataset.get_quantity("single_particle_percentage",update=True, gap=gap)
+            clustercache.save_data(dataset.tlist[time_idx],{"single_particle_percent_gap_"+str(gap):spp})
+            print "data saved at timestep", dataset.tlist[time_idx]
+        else:
+            print "data found at timestep", dataset.tlist[time_idx]
+    
+    except Exception as e:
+        print e
+        continue

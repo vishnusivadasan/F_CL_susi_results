@@ -57,7 +57,7 @@ for folder in folders_list:
     time = viscosity_file[viscosity_file.columns[0]]
     if (phi in phivals) & (len(exp.tlist) > 1):
         #print folder
-        step = 50
+        step = 1
         tlist = tqdm(exp.tlist[100::step])
         for t in tlist:
             try:
@@ -112,6 +112,6 @@ for folder in folders_list:
             
         #print db[phi] 
   except Exception as e: print str(e);continue
-  np.save('test_particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
+  np.save('particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
   folders_list.set_description("Saved data for {}".format(folder))
 print "\n"

@@ -1,0 +1,79 @@
+#!/usr/bin/python
+import os
+import sys
+import numpy as np
+import pandas as pd
+import subprocess
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.legend_handler import HandlerLine2D
+from tqdm import tqdm
+from susipop import filter
+from susipop import reader
+import susipop as sp
+from susipop.susi.cache import SusiCache as cache
+
+gap = 6.7e-8
+phivals = [str(sys.argv[1])]
+# uncomment to use all phi values
+if int(phivals[0]) == 99 : phivals = range(1,100)
+ydvals = [float(i) for i in sys.argv[2:]]
+if int(ydvals[0]) == 99: ydvals = np.arange(0,10001,0.5).astype("float")
+valid_yd = []
+valid_phi = []
+db = {}
+plt.figure(dpi=300)
+for phi in phivals:
+    s_data = []
+    stress_data = []
+    try:
+        for yd in ydvals:
+            path   = "rhor1_phi"+str(phi)+"_yd"+str(float(yd))
+            try:
+                nufile = pd.read_csv(path+'/result/nu_t.dat')
+                t_nu   = nufile[nufile.columns[0]]
+                nu     = nufile[nufile.columns[2]]
+                dataset    = sp.reader.DataSet(path,particles=True, fluid=False)
+                cache_file = cache(cachefile=dataset.cachefile)
+                cache_data = "cluster_size_distribution_dynamic_gap"
+                cache_data = "cluster_size_distribution_gap_"+str(gap)
+                valid_yd.append(yd)
+                init_s_data_len = len(s_data)
+                for i,t in enumerate(tqdm(t_nu)):
+                    try:
+                        if cache_file.has_data(t,cache_data) and i>100:
+                            s,ns    = cache_file.load_data(t, cache_data)
+                            idx     = np.where(ns != 0)[0]
+                            #s_data.append(max(s[idx]))
+                            s_data.append(max(s[idx])/float(dataset.npart))
+                            stress_data.append(nu[i]*yd)
+                    except:
+                        continue
+            except:
+               continue
+
+            fin_s_data_len = len(s_data)
+            print "{0} datapoints found for {1}".format(fin_s_data_len-init_s_data_len,path)
+            valid_phi.append(phi)
+        if phi in valid_phi: 
+            db[phi]=[stress_data,s_data]
+    except:
+        continue
+
+for phi in np.sort(db.keys()):
+    plt.plot(db[phi][0], db[phi][1], '.', label="$\phi=${}".format(phi))
+plt.xlabel("$\sigma$")
+plt.ylabel("largest cluster(giant component)")
+plt.xscale("log")
+
+plt.ylim([0,1])
+plt.xlim([1e-2,1e3])
+#plt.yscale("log")
+plt.title("$\phi=${0},\n $\gamma$={1}/s".format(np.unique(valid_phi),np.unique(valid_yd)),fontsize=8)
+plt.legend(loc='best')
+plt.savefig('giant_component_vs_stress_phi={}'.format(phi))
+
+np.save("shearstress_vs_giantcomponent.npy",db)
+        
+
