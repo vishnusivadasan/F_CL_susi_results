@@ -45,7 +45,7 @@ for i in paths_temp:
 # data saved in the order of shear, rep, fric, lub, tot, hd stresses
 db = dict()
 for phi in phivals:
-    db[phi] = {'strain':[],'npart':0,'radius':[],'pos':[], 'viscosity':[],'shearrate':[],'shear':[],'rep':[],'fric':[],'lub':[],'tot':[],'hd':[],'frac_fric':[], 'cluster_s':[],'cluster_ns':[],'cluster_s_ns':[],'largest_clustersize':[],'avg_clustersize':[]}
+    db[phi] = {'strain':[],'npart':0,'radius':[],'pos':[], 'viscosity':[],'shearrate':[],'shear':[],'rep':[],'fric':[],'lub':[],'tot':[],'hd':[],'frac_fric':[], 'cluster_s':[],'cluster_ns':[],'cluster_s_ns':[],'largest_clustersize':[],'avg_clustersize':[],'cluster_s_fs':[],'cluster_ns_fs':[],'cluster_s_ns_fs':[],'largest_clustersize_fs':[],'avg_clustersize_fs':[],'mean_gap_fs':[],'mean_Frep_fs':[]}
     for ia in ['rep', 'tot', 'fric_kin', 'lub', 'fric_stat', 'fric', 'hd']:
         db[phi][ia+"_raw"] = []
 
@@ -70,7 +70,7 @@ for folder in folders_list:
         tlist = tqdm(exp.tlist[100::step])
         for t in tlist:
             try:
-                tlist.set_description("Time = {}s, every {} steps".format(t,step))
+                tlist.set_description("Analyzing {}, Time = {}s, every {} steps".format(folder,t,step))
                 exp.load_state(t)
                 db[phi]['npart']  = exp.npart
                 db[phi]['radius'] = exp.particles.radius
@@ -97,14 +97,14 @@ for folder in folders_list:
                 F = map(np.linalg.norm, exp.particles.force_tot)
                 Fmean = np.mean(F)
                 mean_gap = get_gap(Fmean)
-                print mean_gap
+                fric_gap = get_gap(2e-10)
+                if mean_gap > fric_gap: mean_gap=0
                 s_sf,ns_sf            = exp.get_quantity("cluster_size_distribution",gap=mean_gap, update=True)
                 s_largest_sf       = max(s_sf)
                 s_avg_sf           = np.sum(s_sf*ns_sf)/float(np.sum(ns_sf))
                 _temp_sf           = np.zeros(exp.npart)
                 _temp[s_sf]        = ns_sf
                 s_ns_sf            = _temp
-                print "asdasd {}".format(s_largest_sf)
                 #number of particles in friction
                 num_part_fric = len(np.where(np.asarray([np.linalg.norm(j) for j in exp.particles.sshear_fric])!= 0)[0]) 
                 percent_part_fric = float(num_part_fric)/float(exp.npart)
@@ -121,11 +121,21 @@ for folder in folders_list:
                 for ia in ['rep', 'tot', 'fric_kin', 'lub', 'fric_stat', 'fric', 'hd']:
                     db[phi][ia+"_raw"].append(np.array(exp.particles.quant["S"]["shear"][ia].T[1]))
                 db[phi]['frac_fric'].append(percent_part_fric)
+
                 db[phi]['cluster_s'].append(s)
                 db[phi]['cluster_ns'].append(ns)
                 db[phi]['cluster_s_ns'].append(s_ns)
                 db[phi]['largest_clustersize'].append(s_largest)
                 db[phi]['avg_clustersize'].append(s_avg)
+
+                db[phi]['cluster_s_fs'].append(s)
+                db[phi]['cluster_ns_fs'].append(ns)
+                db[phi]['cluster_s_ns_fs'].append(s_ns)
+                db[phi]['largest_clustersize_fs'].append(s_largest)
+                db[phi]['avg_clustersize_fs'].append(s_avg)
+                db[phi]['mean_gap_fs'].append(mean_gap)
+                db[phi]['mean_Frep_fs'].append(Fmean)
+
             except Exception as e:
                 print e
                 continue
@@ -133,6 +143,6 @@ for folder in folders_list:
             
         #print db[phi] 
   except Exception as e: print str(e);continue
- # np.save('particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
+  np.save('particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
   folders_list.set_description("Saved data for {}".format(folder))
 print "\n"
