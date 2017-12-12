@@ -9,7 +9,7 @@ mpl.use('Agg')
 import matplotlib.pyplot as plt
 import sys 
 import pandas as pd
-import heatmap
+from scipy.optimize import fsolve
 from tqdm import tqdm
 phivals = [float(i)/100.0 for i in sys.argv[1:]]
 
@@ -22,6 +22,15 @@ dfric = 6.41742430504e-08
 
 def get_data(f,col,t):
     return f[f.columns[col]][t].values[0]
+
+def get_gap(F,drep=1e-7,c0=1e-16):
+    def Feqn( d,*args):
+        drep,c0,F = args
+        return c0*(d-drep)**2/(d*drep**2)-F
+    
+    data = (drep,c0,F)
+    init_guess = 1e-11
+    return fsolve(Feqn,init_guess, args=data)[0]
 
 
 ydvals = [float(i) for i in np.arange(0,10000,0.5)]
@@ -77,13 +86,25 @@ for folder in folders_list:
                 lub_stress      = get_data(lub_file,2,t_) 
                 hd_stress       = get_data(hd_file,2,t_) 
                 shearrate       = shear_stress/viscosity 
+                # static cluster size distribution
                 s,ns            = exp.get_quantity("cluster_size_distribution",gap=dfric, update=True)
                 s_largest       = max(s)
                 s_avg           = np.sum(s*ns)/float(np.sum(ns))
                 _temp           = np.zeros(exp.npart)
                 _temp[s]        = ns
                 s_ns            = _temp
-
+                #dynamic cluster size distribution
+                F = map(np.linalg.norm, exp.particles.force_tot)
+                Fmean = np.mean(F)
+                mean_gap = get_gap(Fmean)
+                print mean_gap
+                s_sf,ns_sf            = exp.get_quantity("cluster_size_distribution",gap=mean_gap, update=True)
+                s_largest_sf       = max(s_sf)
+                s_avg_sf           = np.sum(s_sf*ns_sf)/float(np.sum(ns_sf))
+                _temp_sf           = np.zeros(exp.npart)
+                _temp[s_sf]        = ns_sf
+                s_ns_sf            = _temp
+                print "asdasd {}".format(s_largest_sf)
                 #number of particles in friction
                 num_part_fric = len(np.where(np.asarray([np.linalg.norm(j) for j in exp.particles.sshear_fric])!= 0)[0]) 
                 percent_part_fric = float(num_part_fric)/float(exp.npart)
@@ -112,6 +133,6 @@ for folder in folders_list:
             
         #print db[phi] 
   except Exception as e: print str(e);continue
-  np.save('particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
+ # np.save('particle_pos_radius_clustersizedbn_vs_stresses_all_gap_{}e-10.npy'.format(int(np.round(dfric*1e10))),db)
   folders_list.set_description("Saved data for {}".format(folder))
 print "\n"
